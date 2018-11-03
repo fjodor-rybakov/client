@@ -43,7 +43,7 @@ class SignUp extends Component {
             email: email,
             password: password
         };
-        fetch("/api/signUp", {method: "POST", body: JSON.stringify(body)})
+        fetch("http://localhost:3001/api/signUp", {method: "POST", body: JSON.stringify(body)})
             .then(res => res.json())
             .then(data => this.store.validateErr = data);
     }

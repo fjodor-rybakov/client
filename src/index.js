@@ -6,6 +6,9 @@ import {HomePage} from "./home-page/HomePage";
 import {SingIn} from "./SignIn/SingIn";
 import {SignUp} from "./SignUp/SignUp";
 import {NotFound} from "./not-found/NotFound";
+import {Project} from "./Project/Project";
+import {ProjectList} from "./ProjectList/ProjectList";
+import {Profile} from "./Profile/Profile";
 
 ReactDOM.render(<BrowserRouter>
     <Switch>
@@ -24,11 +27,23 @@ ReactDOM.render(<BrowserRouter>
             path={"/signup"}
             component={SignUp}
         />
+        <Route
+            exact={true}
+            path={"/profile"}
+            component={Profile}
+        />
+        <Route
+            exact={true}
+            path={"/projectList"}
+            component={ProjectList}
+        />
+        <Route
+            exact={true}
+            path={"/project/:id"}
+            component={Project}
+        />
         <Route component={NotFound}/>
     </Switch>
 </BrowserRouter>, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();

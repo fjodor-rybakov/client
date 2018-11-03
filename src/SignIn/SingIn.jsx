@@ -19,7 +19,11 @@ class SingIn extends Component {
             email: login,
             password: password
         });
-        await fetch("/api/signIn", {method: "POST", body: data})
+        const options = {
+            method: "POST",
+            body: data
+        };
+        await fetch("http://localhost:3001/api/signIn", options)
             .then(res => {
                 if (res.status !== 200) {
                     return Promise.reject();

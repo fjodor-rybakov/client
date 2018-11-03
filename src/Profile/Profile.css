@@ -1,0 +1,14 @@
+.image {
+    width: 200px;
+    height: 200px;
+}
+
+#user-name, #user-email, #user-last_name, #user-role {
+    border: none;
+    width: 200px;
+    box-shadow: none;
+}
+
+#photo-upload {
+    width: 270px;
+}

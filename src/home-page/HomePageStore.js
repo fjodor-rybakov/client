@@ -6,4 +6,4 @@ class HomePageStore {
     @observable value = "123";
 }
 
-export { HomePageStore }
+export {HomePageStore}

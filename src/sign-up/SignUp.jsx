@@ -1,10 +1,10 @@
-import * as React from 'react';
+import * as React from "react";
 import {Component} from "react";
 import {Link} from "react-router-dom";
 import {observer} from "mobx-react";
 import {SignUpStore} from "./SignUpStore";
 import autobind from "autobind-decorator";
-import { Redirect } from "react-router";
+import {Redirect} from "react-router";
 
 @observer
 @autobind
@@ -17,7 +17,6 @@ class SignUp extends Component {
     }
 
     handleChangeLogin(event) {
-        console.log(event.target.value);
         this.store.login = event.target.value;
     }
 
@@ -31,8 +30,7 @@ class SignUp extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        console.log(this.store.login,this.store.password, this.store.repeatPassword);
-        if (!this.validateForm(this.store.login,this.store.password, this.store.repeatPassword)) {
+        if (!this.validateForm(this.store.login, this.store.password, this.store.repeatPassword)) {
             return;
         }
         this.sendFormData(this.store.login, this.store.password);
@@ -43,7 +41,8 @@ class SignUp extends Component {
             email: email,
             password: password
         };
-        fetch("http://localhost:3001/api/signUp", {method: "POST", body: JSON.stringify(body)})
+        const options = {method: "POST", body: JSON.stringify(body)};
+        fetch("http://localhost:3001/api/signUp", options)
             .then(res => res.json())
             .then(data => this.store.validateErr = data);
     }
@@ -62,7 +61,7 @@ class SignUp extends Component {
 
     render() {
         if (localStorage.getItem("token")) {
-            return <Redirect to='/' />
+            return <Redirect to={"/"}/>
         } else {
             return (
                 <div className={"container"}>
@@ -100,9 +99,8 @@ class SignUp extends Component {
                         <button type="submit" className="btn btn-primary">Submit</button>
                     </form>
                     {
-                        this.store.validateErr !== ""
-                            ? <div className="alert alert-danger" role="alert">{this.store.validateErr}</div>
-                            : void 0
+                        this.store.validateErr !== "" &&
+                        <div className="alert alert-danger" role="alert">{this.store.validateErr}</div>
                     }
                     <Link className={"btn btn-primary"} to={"/"}>Back to home page</Link>
                 </div>

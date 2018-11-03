@@ -11,4 +11,4 @@ class ProfileStore {
     @observable id_user = 0;
 }
 
-export { ProfileStore }
+export {ProfileStore}

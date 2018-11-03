@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Component } from "react";
-import { Link } from 'react-router-dom';
+import {Component} from "react";
+import {Link} from 'react-router-dom';
 import "./HomePageStyle.css";
 import {observer} from "mobx-react";
 import autobind from "autobind-decorator";
@@ -14,7 +14,7 @@ class HomePage extends Component {
     }
 
     render() {
-        return(
+        return (
             <div>
                 <div className={"authorization"}>
                     {!localStorage.getItem("token") ?
@@ -22,12 +22,13 @@ class HomePage extends Component {
                             <Link className={"btn btn-primary"} id={"signin"} to={"/signin"}>Sign In</Link>
                             <Link className={"btn btn-primary"} id={"signup"} to={"/signup"}>Sign Up</Link>
                         </>
-                    :
+                        :
                         <>
                             <Link className={"btn btn-primary"} id={"profile-button"} to={"profile"}>Profile</Link>
-                            <button className={"btn btn-primary"} id={"logout"} onClick={this.handleLogOut}>Log Out</button>
+                            <button className={"btn btn-primary"} id={"logout"} onClick={this.handleLogOut}>Log Out
+                            </button>
                         </>
-                        }
+                    }
                 </div>
                 <h1 className={"site-name"}>Order task</h1>
                 <div className={"about-us"}>
@@ -41,4 +42,4 @@ class HomePage extends Component {
     }
 }
 
-export { HomePage };
+export {HomePage};

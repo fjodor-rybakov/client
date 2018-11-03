@@ -11,7 +11,8 @@ class Project extends Component {
 
     async componentDidMount() {
         let id = window.location.hash.split('/')[2];
-        await fetch("http://localhost:3001/api/getProject", {method: "POST", body: JSON.stringify({id: id})})
+        const options = {method: "POST", body: JSON.stringify({id: id})};
+        await fetch(`${localStorage.getItem("serverAddress")}/api/getProject`, options)
             .then(res => res.json())
             .then(data => {
                 this.data = data;

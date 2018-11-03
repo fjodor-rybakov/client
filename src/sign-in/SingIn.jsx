@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {Component} from "react";
 import {Link} from "react-router-dom";
 import {SignInStore} from "./SignInStore";
@@ -23,7 +23,7 @@ class SingIn extends Component {
             method: "POST",
             body: data
         };
-        await fetch("http://localhost:3001/api/signIn", options)
+        await fetch(`${localStorage.getItem("serverAddress")}/api/signIn`, options)
             .then(res => {
                 if (res.status !== 200) {
                     return Promise.reject();
@@ -36,7 +36,6 @@ class SingIn extends Component {
 
     handleAcceptUser(data) {
         localStorage.setItem("token", data.token);
-        console.log("token", data);
         window.location.reload();
     }
 
@@ -50,7 +49,7 @@ class SingIn extends Component {
 
     render() {
         if (localStorage.getItem("token")) {
-            return <Redirect to='/' />
+            return <Redirect to={"/"} />
         } else  {
             return (
                 <div className={"container"}>
@@ -86,9 +85,8 @@ class SingIn extends Component {
                         <button onClick={this.handleSubmit} className={"btn btn-primary"}>Sign In</button>
                     </form>
                     {
-                        this.store.validateErr !== ""
-                            ? <div className={"alert alert-danger"} role={"alert"}>{this.store.validateErr}</div>
-                            : void 0
+                        this.store.validateErr !== "" &&
+                        <div className={"alert alert-danger"} role={"alert"}>{this.store.validateErr}</div>
                     }
                     <Link className={"btn btn-primary"} to={"/"}>Back to home page</Link>
                 </div>

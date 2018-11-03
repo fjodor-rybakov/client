@@ -1,6 +1,7 @@
-.image {
+.avatar-profile {
     width: 200px;
     height: 200px;
+    background-image: url("./img/images.png");
 }
 
 #user-name, #user-email, #user-last_name, #user-role {

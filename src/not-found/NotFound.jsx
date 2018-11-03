@@ -1,8 +1,8 @@
 import * as React from "react";
-import { Component } from "react";
+import {Component} from "react";
 import "./NotFoundStyle.css";
 
-class NotFound extends Component  {
+class NotFound extends Component {
     render() {
         return (
             <div>
@@ -12,4 +12,4 @@ class NotFound extends Component  {
     }
 }
 
-export { NotFound }
+export {NotFound}

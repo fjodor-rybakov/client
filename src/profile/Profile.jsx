@@ -13,10 +13,16 @@ class Profile extends Component {
     validateRef = React.createRef();
 
     async componentDidMount() {
-        const data = {id: 1};
+        const data = {token: localStorage.getItem("token")};
         const options = {method: "POST", body: JSON.stringify(data)};
         await fetch(`${localStorage.getItem("serverAddress")}/api/profile`, options)
-            .then(res => res.json())
+            .then(res => {
+                if (res.status === 401) {
+                    localStorage.removeItem("token");
+                    window.location.reload();
+                }
+                return res.json();
+            })
             .then(this.setDefaultValue)
             .catch(this.errorGetDataProfile);
     }

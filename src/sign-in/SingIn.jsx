@@ -21,22 +21,27 @@ class SingIn extends Component {
         });
         const options = {
             method: "POST",
-            body: data
+            body: data,
+            header: {
+                "Authorization": localStorage.getItem("token")
+            }
         };
         await fetch(`${localStorage.getItem("serverAddress")}/api/signIn`, options)
             .then(res => {
-                if (res.status !== 200) {
-                    return Promise.reject();
-                }
                 return res.json();
             })
-            .then(data => this.handleAcceptUser(data))
-            .catch(() => this.store.validateErr = "Такого пользователя не существует");
+            .then(this.handleAcceptUser)
+            .catch(this.handleRejectUser);
     }
 
     handleAcceptUser(data) {
         localStorage.setItem("token", data.token);
+        console.log("token", data);
         window.location.reload();
+    }
+
+    handleRejectUser() {
+        this.store.validateErr = "Такого пользователя не существует"
     }
 
     handleChangeLogin(event) {

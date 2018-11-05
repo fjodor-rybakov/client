@@ -4,6 +4,7 @@ import {Redirect} from "react-router";
 import {ProfileStore} from "./ProfileStore";
 import * as React from "react";
 import autobind from "autobind-decorator";
+import {AppContext} from "../AppContext";
 import "./Profile.css";
 
 @observer
@@ -13,16 +14,7 @@ class Profile extends Component {
     validateRef = React.createRef();
 
     async componentDidMount() {
-        const data = {token: localStorage.getItem("token")};
-        const options = {method: "POST", body: JSON.stringify(data)};
-        await fetch(`${localStorage.getItem("serverAddress")}/api/profile`, options)
-            .then(res => {
-                if (res.status === 401) {
-                    localStorage.removeItem("token");
-                    window.location.reload();
-                }
-                return res.json();
-            })
+        AppContext.getToken("/api/profile")
             .then(this.setDefaultValue)
             .catch(this.errorGetDataProfile);
     }

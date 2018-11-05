@@ -14,7 +14,7 @@ class Profile extends Component {
     validateRef = React.createRef();
 
     async componentDidMount() {
-        AppContext.getToken("/api/profile")
+        AppContext.getToken()
             .then(this.setDefaultValue)
             .catch(this.errorGetDataProfile);
     }

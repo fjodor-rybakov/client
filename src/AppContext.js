@@ -1,9 +1,9 @@
 class AppContext {
-    static getToken(path) {
-        return new Promise((resolve, reject) => {
+    static getToken() {
+        return new Promise((resolve) => {
             const data = {token: localStorage.getItem("token")};
             const options = {method: "POST", body: JSON.stringify(data)};
-            fetch(`${localStorage.getItem("serverAddress")}${path}`, options)
+            fetch(`${localStorage.getItem("serverAddress")}/api/authorization`, options)
                 .then(res => {
                     if (res.status === 401) {
                         localStorage.removeItem("token");

@@ -28,6 +28,9 @@ class SingIn extends Component {
         };
         await fetch(`${localStorage.getItem("serverAddress")}/api/signIn`, options)
             .then(res => {
+                if (res.status !== 200) {
+                    return Promise.reject();
+                }
                 return res.json();
             })
             .then(this.handleAcceptUser)

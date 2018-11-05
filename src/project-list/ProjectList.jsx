@@ -23,9 +23,9 @@ class ProjectList extends Component {
     render() {
         return (
             <>
-                {this.store.data.map(project => {
+                {this.store.data.map((project, index) => {
                     return (
-                        <div className={"project-card"}>
+                        <div className={"project-card"} key={index}>
                             <Link to={`/project/${project.id_project}`}>{project.title}</Link>
                         </div>
                     )}

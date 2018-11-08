@@ -3,7 +3,7 @@ class AppContext {
         return new Promise((resolve) => {
             const data = {token: localStorage.getItem("token")};
             const options = {method: "POST", body: JSON.stringify(data)};
-            fetch(`${localStorage.getItem("serverAddress")}/api/authorization`, options)
+            fetch(`${localStorage.getItem("serverAddress")}/api/checkAuthorization`, options)
                 .then(res => {
                     if (res.status === 401) {
                         localStorage.removeItem("token");

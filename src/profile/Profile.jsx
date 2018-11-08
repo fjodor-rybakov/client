@@ -13,8 +13,16 @@ class Profile extends Component {
     store = new ProfileStore();
     validateRef = React.createRef();
 
+    constructor(props) {
+        super(props);
+        AppContext.getToken();
+    }
+
     async componentDidMount() {
-        AppContext.getToken()
+        const data = {token: localStorage.getItem("token")};
+        const options = {method: "POST", body: JSON.stringify(data)};
+        await fetch(`${localStorage.getItem("serverAddress")}/api/profileData`, options)
+            .then(res => res.json())
             .then(this.setDefaultValue)
             .catch(this.errorGetDataProfile);
     }

@@ -3,12 +3,18 @@ import {observable} from "mobx";
 
 @autobind
 class AddTaskFormStore {
-    @observable project_id = null;
+    @observable project_id;
     @observable first_name = "";
     @observable last_name = "";
-    @observable email = "";
-    @observable role = 0;
-    @observable id_user = 0;
+    @observable error = "";
+    @observable id_user;
+    @observable selectedDeveloper = [];
+    @observable selectedTesters = [];
+    @observable developerList = [];
+    @observable testerList = [];
+    description = "";
+    time = "";
+    title = "";
 }
 
 export {AddTaskFormStore}

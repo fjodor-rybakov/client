@@ -1,0 +1,12 @@
+.close-icon {
+    height: 15px;
+    width: 15px;
+    background: url("img/close.png") round;
+    margin-left: 5px;
+}
+
+.selected-container {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}

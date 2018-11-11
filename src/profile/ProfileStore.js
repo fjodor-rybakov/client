@@ -8,7 +8,9 @@ class ProfileStore {
     @observable last_name = "";
     @observable email = "";
     @observable role = "";
+    @observable photo = "";
     @observable id_user = 0;
+    @observable path = "";
 }
 
 export {ProfileStore}

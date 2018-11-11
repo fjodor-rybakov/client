@@ -5,7 +5,7 @@ class AppContext {
             const options = {method: "POST", body: JSON.stringify(data)};
             fetch(`${localStorage.getItem("serverAddress")}/api/checkAuthorization`, options)
                 .then(res => {
-                    if (res.status === 401) {
+                    if (res.status !== 200) {
                         localStorage.removeItem("token");
                         window.location.reload();
                     }

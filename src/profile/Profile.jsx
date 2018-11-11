@@ -33,6 +33,7 @@ class Profile extends Component {
         this.store.email = data.email;
         this.store.role = +data.role === 1 ? "user" : "admin";
         this.store.id_user = +data.id_user;
+        this.store.path = data.photo;
     }
 
     errorGetDataProfile() {
@@ -51,12 +52,36 @@ class Profile extends Component {
         this.store.email = event.target.value;
     }
 
+    async changePhoto(event) {
+        console.log(event.target.files[0]);
+        const image = event.target.files[0];
+        await this.loadImage(image)
+            .then(data => this.store.photo = data)
+            .catch(console.log);
+    }
+
+    loadImage(image) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(image);
+            reader.onload = () => {
+                console.log("ok");
+                return resolve(reader.result);
+            };
+            reader.onerror = (event) => {
+                console.log("not ok");
+                return reject(event);
+            };
+        })
+    }
+
     async saveDataProfile() {
         const data = {
             first_name: this.store.first_name,
             last_name: this.store.last_name,
             email: this.store.email,
             id_user: this.store.id_user,
+            photo: this.store.photo
         };
         const options = {method: "POST", body: JSON.stringify(data)};
         await fetch(`${localStorage.getItem("serverAddress")}/api/updateProfile`, options)
@@ -87,8 +112,14 @@ class Profile extends Component {
             return (
                 <div className={"container"}>
                     <div className={"form-group"}>
-                        <div className={"avatar-profile"}/>
-                        <input type={"file"} className={"form-control"} id={"photo-upload"}/>
+                        <img src={this.store.path} className={"avatar-profile"} alt={"img"}/>
+                        <input
+                            type={"file"}
+                            className={"form-control"}
+                            id={"photo-upload"}
+                            required={"required"}
+                            onChange={this.changePhoto}
+                        />
                         <input
                             className={"form-control"}
                             type={"text"}

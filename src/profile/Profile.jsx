@@ -6,6 +6,7 @@ import * as React from "react";
 import autobind from "autobind-decorator";
 import {AppContext} from "../AppContext";
 import "./Profile.css";
+import {Link} from "react-router-dom";
 
 @observer
 @autobind
@@ -65,11 +66,9 @@ class Profile extends Component {
             const reader = new FileReader();
             reader.readAsDataURL(image);
             reader.onload = () => {
-                console.log("ok");
                 return resolve(reader.result);
             };
             reader.onerror = (event) => {
-                console.log("not ok");
                 return reject(event);
             };
         })
@@ -86,9 +85,8 @@ class Profile extends Component {
         const options = {method: "POST", body: JSON.stringify(data)};
         await fetch(`${localStorage.getItem("serverAddress")}/api/updateProfile`, options)
             .then(res => {
-                if (res.status !== 200) {
+                if (res.status !== 200)
                     return Promise.reject();
-                }
                 return res.json();
             })
             .then(this.successUpdateProfile)
@@ -147,7 +145,10 @@ class Profile extends Component {
                             id={"user-role"}
                             defaultValue={this.store.role}
                         />
-                        <button onClick={this.saveDataProfile} className={"btn btn-primary"}>Save</button>
+                        <button onClick={this.saveDataProfile} className={"btn btn-primary"} id={"save-button"}>Save</button>
+                        <div>
+                            <Link className={"btn btn-primary"} to={"/"} id={"back"}>Back</Link>
+                        </div>
                         {
                             this.store.validateErr !== "" &&
                             <div role={"alert"} ref={this.validateRef}>{this.store.validateErr}</div>

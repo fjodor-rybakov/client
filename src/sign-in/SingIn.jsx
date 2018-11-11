@@ -62,7 +62,7 @@ class SingIn extends Component {
             return (
                 <div className={"container"}>
                     <h1>Вход</h1>
-                    <div className={"switch-authorization"}>
+                    <div>
                         <Link className={"btn btn-primary"} to={"/signup"}>Sign Up</Link>
                     </div>
                     <form className={"form"}>

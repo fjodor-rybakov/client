@@ -7,6 +7,7 @@ import {SingIn} from "./sign-in/SingIn";
 import {SignUp} from "./sign-up/SignUp";
 import {NotFound} from "./not-found/NotFound";
 import {Project} from "./project/Project";
+import {Task} from "./project/components/TasksList/Task/Task";
 import {ProjectList} from "./project-list/ProjectList";
 import {Profile} from "./profile/Profile";
 
@@ -44,6 +45,11 @@ ReactDOM.render(
                 exact={true}
                 path={"/project/:id"}
                 component={Project}
+            />
+            <Route
+                exact={true}
+                path={"/project/:id/:taskid"}
+                component={Task}
             />
             <Route component={NotFound}/>
         </Switch>

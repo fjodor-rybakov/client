@@ -3,7 +3,7 @@ import * as React from "react";
 import autobind from "autobind-decorator";
 import {observer} from "mobx-react/index";
 import {AddTaskFormStore} from "./AddTaskFormStore";
-import {AppContext} from "../../AppContext";
+import {AppContext} from "../../../AppContext";
 import {AddTaskFormController} from "./AddTaskFormController";
 import {Redirect} from "react-router";
 import {SimpleSelect} from 'react-selectize';
@@ -81,12 +81,12 @@ class AddTaskForm extends Component {
 
     verifyData(data) {
         return !(!data.id_project || !data.id_user_manager || !data.description || !data.time
-            || !data.title || !data.developers);
+            || !data.title || !data.developers)
 
     }
 
     onSuccessCreateTask() {
-        console.log("success")
+
     }
 
     setDefaultValue(data) {
@@ -110,7 +110,6 @@ class AddTaskForm extends Component {
     }
 
     removeTester(index) {
-        console.log(index);
         if (index === undefined) {
             return;
         }
@@ -118,7 +117,6 @@ class AddTaskForm extends Component {
     }
 
     removeDeveloper(index) {
-        console.log(index);
         if (index === undefined) {
             return;
         }
@@ -129,9 +127,6 @@ class AddTaskForm extends Component {
         if (!localStorage.getItem("token")) {
             return <Redirect to={"/signin"}/>
         } else {
-            // let options = this.store.developerList.map((data, index) => {
-            //     return {value: `${data.first_name} ${data.last_name}`, label: `${index}`}
-            // });
             return (
                 <>
                     <div>Project id: {this.store.project_id}</div>

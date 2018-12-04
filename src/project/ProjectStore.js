@@ -3,6 +3,16 @@ import {observable} from "mobx/lib/mobx";
 
 @autobind
 class ProjectStore {
+    _id = "";
+
+    get id() {
+        return this._id
+    }
+
+    set id(id) {
+        this._id = id;
+    }
+
     @observable _data = {};
     @observable _isAddBlockShown = false;
 
@@ -22,4 +32,5 @@ class ProjectStore {
         this._isAddBlockShown = data;
     }
 }
+
 export {ProjectStore};

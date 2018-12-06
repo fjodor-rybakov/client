@@ -55,7 +55,6 @@
     "react-router-dom": "^4.3.1",
     "react-selectize": "^3.0.1",
     "resolve": "1.8.1",
-    "sass-loader": "7.1.0",
     "style-loader": "0.23.0",
     "terser-webpack-plugin": "1.1.0",
     "url-loader": "1.1.1",
@@ -137,5 +136,9 @@
       "jsx",
       "node"
     ]
+  },
+  "devDependencies": {
+    "node-sass": "^4.10.0",
+    "sass-loader": "^7.1.0"
   }
 }

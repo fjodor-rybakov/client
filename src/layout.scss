@@ -1,0 +1,35 @@
+a {
+  color: #333;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    color: #333;
+  }
+}
+
+.header {
+  width: 100%;
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  padding-right: 30px;
+  height: 60px;
+
+  &-link {
+    display: flex;
+    margin-right: 20px;
+    font-size: 16px;
+  }
+
+  .logout {
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .home {
+    display: flex;
+    flex-grow: 2;
+    margin-left: 30px;
+  }
+}

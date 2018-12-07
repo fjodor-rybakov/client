@@ -10,6 +10,7 @@ import {Project} from "./project/Project";
 import {Task} from "./project/components/TasksList/Task/Task";
 import {ProjectList} from "./project-list/ProjectList";
 import {Profile} from "./profile/Profile";
+import {layout} from "./layout";
 
 localStorage.setItem("serverAddress", "http://localhost:3001");
 
@@ -19,37 +20,37 @@ ReactDOM.render(
             <Route
                 exact={true}
                 path={"/"}
-                component={HomePage}
+                component={renderPage.bind(this, <HomePage/>)}
             />
             <Route
                 exact={true}
                 path={"/signin"}
-                component={SingIn}
+                component={renderPage.bind(this, <SingIn/>)}
             />
             <Route
                 exact={true}
                 path={"/signup"}
-                component={SignUp}
+                component={renderPage.bind(this, <SignUp/>)}
             />
             <Route
                 exact={true}
                 path={"/profile"}
-                component={Profile}
+                component={renderPage.bind(this, <Profile/>)}
             />
             <Route
                 exact={true}
                 path={"/projectList"}
-                component={ProjectList}
+                component={renderPage.bind(this, <ProjectList/>)}
             />
             <Route
                 exact={true}
                 path={"/project/:id"}
-                component={Project}
+                component={renderPage.bind(this, <Project/>)}
             />
             <Route
                 exact={true}
                 path={"/project/:id/:taskid"}
-                component={Task}
+                component={renderPage.bind(this, <Task/>)}
             />
             <Route component={NotFound}/>
         </Switch>
@@ -59,3 +60,7 @@ ReactDOM.render(
 
 // client server
 serviceWorker.unregister();
+
+function renderPage(component) {
+    return new layout(component);
+}

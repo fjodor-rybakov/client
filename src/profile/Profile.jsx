@@ -18,9 +18,7 @@ class Profile extends Component {
         const options = {
             method: 'GET',
             uri: `${localStorage.getItem("serverAddress")}/api/profile`,
-            headers: {
-                "x-guide-key": localStorage.getItem("token")
-            },
+            headers: {"x-guide-key": localStorage.getItem("token")},
         };
         rp(options)
             .then(res => JSON.parse(res))

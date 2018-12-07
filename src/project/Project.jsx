@@ -5,6 +5,7 @@ import {observer} from "mobx-react";
 import {ProjectStore} from "./ProjectStore";
 import {AddTaskForm} from "./components/AddTaskForm/AddTaskForm";
 import {TasksList} from "./components/TasksList/TasksList.jsx";
+import * as rp from "request-promise";
 
 @observer
 @autobind
@@ -13,12 +14,16 @@ class Project extends Component {
 
     async componentWillMount() {
         this.store.id = window.location.pathname.split('/')[2];
-        const options = {method: "POST", body: JSON.stringify({id: this.store.id})};
-        await fetch(`${localStorage.getItem("serverAddress")}/api/getProject`, options)
-            .then(res => res.json())
-            .then(data => {
-                this.store.data = data;
-            });
+        const options = {
+            method: "POST",
+            url: `${localStorage.getItem("serverAddress")}/api/project`,
+            headers: {"x-guide-key": localStorage.getItem("token")},
+            body: {id: this.store.id},
+            json: true
+        };
+        rp(options)
+            .then(data => this.store.data = data)
+            .catch(console.log);
     }
 
     componentDidUpdate() {

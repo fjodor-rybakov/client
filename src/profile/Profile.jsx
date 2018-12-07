@@ -8,7 +8,6 @@ import "./Profile.css";
 import {Link} from "react-router-dom";
 import * as rp from "request-promise";
 
-
 @observer
 @autobind
 class Profile extends Component {

@@ -5,6 +5,7 @@ import {SignInStore} from "./SignInStore";
 import {observer} from "mobx-react";
 import autobind from "autobind-decorator";
 import { Redirect } from "react-router";
+import * as rp from "request-promise";
 
 @autobind
 @observer
@@ -13,26 +14,16 @@ class SingIn extends Component {
 
     async handleSubmit(event) {
         await event.preventDefault();
-        const login = this.store.login;
-        const password = this.store.password;
-        const data = JSON.stringify({
-            email: login,
-            password: password
-        });
         const options = {
             method: "POST",
-            body: data,
-            header: {
-                "Authorization": localStorage.getItem("token")
-            }
+            url: `${localStorage.getItem("serverAddress")}/api/signIn`,
+            body: {
+                email: this.store.login,
+                password: this.store.password
+            },
+            json: true
         };
-        await fetch(`${localStorage.getItem("serverAddress")}/api/signIn`, options)
-            .then(res => {
-                if (res.status !== 200) {
-                    return Promise.reject();
-                }
-                return res.json();
-            })
+        rp(options)
             .then(this.handleAcceptUser)
             .catch(this.handleRejectUser);
     }

@@ -5,6 +5,7 @@ import {observer} from "mobx-react";
 import {SignUpStore} from "./SignUpStore";
 import autobind from "autobind-decorator";
 import {Redirect} from "react-router";
+import * as rp from "request-promise";
 
 @observer
 @autobind
@@ -37,14 +38,18 @@ class SignUp extends Component {
     }
 
     sendFormData(email, password) {
-        const body = {
-            email: email,
-            password: password
+        const options = {
+            url: "http://localhost:3001/api/signUp",
+            method: "POST",
+            body: {
+                email: email,
+                password: password
+            },
+            json: true
         };
-        const options = {method: "POST", body: JSON.stringify(body)};
-        fetch("http://localhost:3001/api/signUp", options)
-            .then(res => res.json())
-            .then(data => this.store.validateErr = data);
+        rp(options)
+            .then(data => this.store.validateErr = data)
+            .catch(console.log);
     }
 
     validateForm(email, password, repeatPass) {

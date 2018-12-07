@@ -15,11 +15,9 @@ class Project extends Component {
     async componentWillMount() {
         this.store.id = window.location.pathname.split('/')[2];
         const options = {
-            method: "POST",
-            url: `${localStorage.getItem("serverAddress")}/api/project`,
+            method: "GET",
+            url: `${localStorage.getItem("serverAddress")}/api/project/${this.store.id}`,
             headers: {"x-guide-key": localStorage.getItem("token")},
-            body: {id: this.store.id},
-            json: true
         };
         rp(options)
             .then(data => this.store.data = data)

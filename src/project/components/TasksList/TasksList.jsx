@@ -3,6 +3,7 @@ import {TasksListStore} from "./TasksListStore";
 import autobind from "autobind-decorator";
 import {observer} from "mobx-react";
 import Link from "react-router-dom/es/Link";
+import * as rp from "request-promise";
 
 @autobind
 @observer
@@ -15,14 +16,16 @@ class TasksList extends React.Component {
     }
 
     async componentWillMount() {
-        const options = {method: "POST", body: JSON.stringify({id: this.store.idProject})};
-        await fetch(`${localStorage.getItem("serverAddress")}/api/getTasksList`, options)
-            .then(res => res.json())
-            .then(data => {
-                this.store.data = data;
-                console.log(data);
-            });
-
+        const options = {
+            method: "POST",
+            url: `${localStorage.getItem("serverAddress")}/api/tasksList`,
+            headers: {"x-guide-key": localStorage.getItem("token")},
+            body: {id: this.store.idProject},
+            json: true
+        };
+        rp(options)
+            .then(data => this.store.data = data)
+            .catch(console.log);
     }
 
     render() {

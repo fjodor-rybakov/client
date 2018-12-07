@@ -8,11 +8,6 @@ import autobind from "autobind-decorator";
 @observer
 @autobind
 class HomePage extends Component {
-    handleLogOut() {
-        localStorage.clear();
-        window.location.reload();
-    }
-
     render() {
         return (
             <div className={"home-page"}>

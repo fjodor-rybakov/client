@@ -12,6 +12,11 @@ class layout extends React.Component {
         this.children = component;
     }
 
+    handleLogOut() {
+        localStorage.clear();
+        window.location.reload();
+    }
+
     render() {
         return (
             <div>

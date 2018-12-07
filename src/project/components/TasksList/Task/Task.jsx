@@ -2,7 +2,7 @@ import React from "react";
 import {TaskStore} from "./TaskStore";
 import autobind from "autobind-decorator";
 import {observer} from "mobx-react/index";
-import * as rq from "request-promise";
+import * as rp from "request-promise";
 
 @autobind
 @observer
@@ -11,13 +11,14 @@ class Task extends React.Component {
 
     async componentWillMount() {
         this.store.id = window.location.pathname.split('/')[3];
-        const options = {method: "POST", body: JSON.stringify({id_task: this.store.id})};
-        await fetch(`${localStorage.getItem("serverAddress")}/api/getTracks`, options)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                this.store.data = data;
-            });
+        const options = {
+            method: "GET",
+            url: `${localStorage.getItem("serverAddress")}/api/tracks/${this.store.id}`,
+            headers: {"x-guide-key": localStorage.getItem("token")},
+        };
+        rp(options)
+            .then(data => this.store.data = data)
+            .catch(console.log);
     }
 
     async addTrack() {

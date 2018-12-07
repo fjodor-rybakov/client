@@ -76,22 +76,25 @@ class Profile extends Component {
     }
 
     async saveDataProfile() {
-        const data = {
-            first_name: this.store.first_name,
-            last_name: this.store.last_name,
-            email: this.store.email,
-            id_user: this.store.id_user,
-            photo: this.store.photo
+        const options = {
+            method: "PUT",
+            uri: `${localStorage.getItem("serverAddress")}/api/profile`,
+            headers: {
+                "x-guide-key": localStorage.getItem("token")
+            },
+            body: {
+                first_name: this.store.first_name,
+                last_name: this.store.last_name,
+                email: this.store.email,
+                id_user: this.store.id_user,
+                photo: this.store.photo
+            },
+            resolveWithFullResponse: true,
+            json: true
         };
-        const options = {method: "PUT", body: JSON.stringify(data)};
-        await fetch(`${localStorage.getItem("serverAddress")}/api/profile`, options)
-            .then(res => {
-                if (res.status !== 200)
-                    return Promise.reject();
-                return res.json();
-            })
+        rp(options)
             .then(this.successUpdateProfile)
-            .catch(this.rejectUpdateProfile)
+            .catch(this.rejectUpdateProfile);
     }
 
     successUpdateProfile() {

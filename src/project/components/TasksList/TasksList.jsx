@@ -17,13 +17,12 @@ class TasksList extends React.Component {
 
     async componentWillMount() {
         const options = {
-            method: "POST",
-            url: `${localStorage.getItem("serverAddress")}/api/tasksList`,
+            method: "GET",
+            url: `${localStorage.getItem("serverAddress")}/api/tasksList/${this.store.idProject}`,
             headers: {"x-guide-key": localStorage.getItem("token")},
-            body: {id: this.store.idProject},
-            json: true
         };
         rp(options)
+            .then(res => JSON.parse(res))
             .then(data => this.store.data = data)
             .catch(console.log);
     }

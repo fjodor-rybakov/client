@@ -4,9 +4,10 @@ import {Redirect} from "react-router";
 import {ProfileStore} from "./ProfileStore";
 import * as React from "react";
 import autobind from "autobind-decorator";
-import {AppContext} from "../AppContext";
 import "./Profile.css";
 import {Link} from "react-router-dom";
+const rp = require('request-promise');
+
 
 @observer
 @autobind
@@ -14,18 +15,42 @@ class Profile extends Component {
     store = new ProfileStore();
     validateRef = React.createRef();
 
-    constructor(props) {
-        super(props);
-        AppContext.getToken();
-    }
-
     async componentDidMount() {
-        const data = {token: localStorage.getItem("token")};
-        const options = {method: "POST", body: JSON.stringify(data)};
-        await fetch(`${localStorage.getItem("serverAddress")}/api/profileData`, options)
-            .then(res => res.json())
-            .then(this.setDefaultValue)
-            .catch(this.errorGetDataProfile);
+        console.log(localStorage.getItem("token"));
+        const options = {
+            method: 'POST',
+            uri: `${localStorage.getItem("serverAddress")}/api/profileData`,
+            body: {},
+            headers: {
+                "x-guide-key": localStorage.getItem("token")
+            },
+            json: true
+        };
+        rp(options)
+            .then(console.log)
+            .catch(console.log);
+        /*Axios({
+            method: 'post',
+            url: `${localStorage.getItem("serverAddress")}/api/profileData`,
+            data: {
+                title: 'Fred',
+                lastName: 'Flintstone',
+            },
+            headers: {
+                'Authorization': localStorage.getItem("token"),
+            },
+        });*/
+         /*const options = {
+             method: "POST",
+             body: JSON.stringify("qwe"),
+             headers: {
+                 "Authorization": `${localStorage.getItem("token")}`
+             },
+         };
+         await fetch(`${localStorage.getItem("serverAddress")}/api/profileData`, options)
+             .then(res => res.json())
+             .then(this.setDefaultValue)
+             .catch(this.errorGetDataProfile);*/
     }
 
     setDefaultValue(data) {
@@ -37,7 +62,8 @@ class Profile extends Component {
         this.store.path = data.photo;
     }
 
-    errorGetDataProfile() {
+    errorGetDataProfile(err) {
+        console.log(err);
         throw new Error("Data not received");
     }
 
@@ -145,7 +171,8 @@ class Profile extends Component {
                             id={"user-role"}
                             defaultValue={this.store.role}
                         />
-                        <button onClick={this.saveDataProfile} className={"btn btn-primary"} id={"save-button"}>Save</button>
+                        <button onClick={this.saveDataProfile} className={"btn btn-primary"} id={"save-button"}>Save
+                        </button>
                         <div>
                             <Link className={"btn btn-primary"} to={"/"} id={"back"}>Back</Link>
                         </div>

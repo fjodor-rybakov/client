@@ -17,19 +17,17 @@ class Task extends React.Component {
             headers: {"x-guide-key": localStorage.getItem("token")},
         };
         rp(options)
-            .then(data => this.store.data = data)
+            .then(this.setDefaultValue)
             .catch(console.log);
     }
 
     async addTrack() {
         console.log(this.store.endData, this.store.endTime);
-        /*await AppContext.getToken()
-            .then(this.setDefaultValue)
-            .catch(console.log);*/
-
         const options = {
             method: "POST",
-            body: JSON.stringify({
+            url: `${localStorage.getItem("serverAddress")}/api/track`,
+            headers: {"x-guide-key": localStorage.getItem("token")},
+            body: {
                 id_task: this.store.id,
                 id_user: this.store.id_user,
                 start_data: this.store.startData,
@@ -37,13 +35,12 @@ class Task extends React.Component {
                 start_time: this.store.startTime,
                 end_time: this.store.endTime,
                 description: this.store.description
-            })
+            },
+            json: true
         };
-        await fetch(`${localStorage.getItem("serverAddress")}/api/addTrack`, options)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-            });
+        rp(options)
+            .then(console.log)
+            .catch(console.log);
     }
 
     onChangeStartData(event) {
@@ -71,6 +68,7 @@ class Task extends React.Component {
     }
 
     setDefaultValue(data) {
+        this.store.data = data;
         this.store.id_user = +data.id_user;
     }
 

@@ -1,5 +1,4 @@
 import * as React from "react";
-import {AppContext} from "../../../AppContext";
 import {TasksListStore} from "./TasksListStore";
 import autobind from "autobind-decorator";
 import {observer} from "mobx-react";
@@ -13,7 +12,6 @@ class TasksList extends React.Component {
     constructor(props) {
         super(props);
         this.store.idProject = props.idProject;
-        AppContext.getToken();
     }
 
     async componentWillMount() {

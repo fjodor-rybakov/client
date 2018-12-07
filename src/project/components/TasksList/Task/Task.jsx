@@ -2,7 +2,7 @@ import React from "react";
 import {TaskStore} from "./TaskStore";
 import autobind from "autobind-decorator";
 import {observer} from "mobx-react/index";
-import {AppContext} from "../../../../AppContext";
+import * as rq from "request-promise";
 
 @autobind
 @observer
@@ -22,9 +22,10 @@ class Task extends React.Component {
 
     async addTrack() {
         console.log(this.store.endData, this.store.endTime);
-        await AppContext.getToken()
+        /*await AppContext.getToken()
             .then(this.setDefaultValue)
-            .catch(console.log);
+            .catch(console.log);*/
+
         const options = {
             method: "POST",
             body: JSON.stringify({

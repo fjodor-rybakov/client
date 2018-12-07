@@ -18,7 +18,7 @@ class Profile extends Component {
     async componentDidMount() {
         const options = {
             method: 'GET',
-            uri: `${localStorage.getItem("serverAddress")}/api/profileData`,
+            uri: `${localStorage.getItem("serverAddress")}/api/profile`,
             headers: {
                 "x-guide-key": localStorage.getItem("token")
             },
@@ -40,7 +40,6 @@ class Profile extends Component {
 
     errorGetDataProfile(err) {
         console.log(err);
-        throw new Error("Data not received");
     }
 
     changeFirstName(event) {
@@ -84,8 +83,8 @@ class Profile extends Component {
             id_user: this.store.id_user,
             photo: this.store.photo
         };
-        const options = {method: "POST", body: JSON.stringify(data)};
-        await fetch(`${localStorage.getItem("serverAddress")}/api/updateProfile`, options)
+        const options = {method: "PUT", body: JSON.stringify(data)};
+        await fetch(`${localStorage.getItem("serverAddress")}/api/profile`, options)
             .then(res => {
                 if (res.status !== 200)
                     return Promise.reject();

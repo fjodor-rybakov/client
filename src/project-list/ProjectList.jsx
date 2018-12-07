@@ -13,7 +13,7 @@ class ProjectList extends Component {
 
     async componentDidMount() {
         const options = {method: "GET"};
-        await fetch(`${localStorage.getItem("serverAddress")}/api/getProjects`, options)
+        await fetch(`${localStorage.getItem("serverAddress")}/api/projectList`, options)
             .then(res => res.json())
             .then(data => {
                 this.store.data = data;

@@ -3,7 +3,6 @@ import * as React from "react";
 import autobind from "autobind-decorator";
 import {observer} from "mobx-react/index";
 import {AddTaskFormStore} from "./AddTaskFormStore";
-import {AppContext} from "../../../AppContext";
 import {AddTaskFormController} from "./AddTaskFormController";
 import {Redirect} from "react-router";
 import {SimpleSelect} from 'react-selectize';
@@ -33,9 +32,9 @@ class AddTaskForm extends Component {
     }
 
     async componentDidMount() {
-        await AppContext.getToken()
+        /*await AppContext.getToken()
             .then(this.setDefaultValue)
-            .catch(console.log);
+            .catch(console.log);*/
     }
 
     onSelectDeveloper(selectedOption) {

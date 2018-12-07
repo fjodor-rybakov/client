@@ -6,7 +6,7 @@ import * as React from "react";
 import autobind from "autobind-decorator";
 import "./Profile.css";
 import {Link} from "react-router-dom";
-const rp = require('request-promise');
+import * as rp from "request-promise";
 
 
 @observer
@@ -16,41 +16,17 @@ class Profile extends Component {
     validateRef = React.createRef();
 
     async componentDidMount() {
-        console.log(localStorage.getItem("token"));
         const options = {
-            method: 'POST',
+            method: 'GET',
             uri: `${localStorage.getItem("serverAddress")}/api/profileData`,
-            body: {},
             headers: {
                 "x-guide-key": localStorage.getItem("token")
             },
-            json: true
         };
         rp(options)
-            .then(console.log)
-            .catch(console.log);
-        /*Axios({
-            method: 'post',
-            url: `${localStorage.getItem("serverAddress")}/api/profileData`,
-            data: {
-                title: 'Fred',
-                lastName: 'Flintstone',
-            },
-            headers: {
-                'Authorization': localStorage.getItem("token"),
-            },
-        });*/
-         /*const options = {
-             method: "POST",
-             body: JSON.stringify("qwe"),
-             headers: {
-                 "Authorization": `${localStorage.getItem("token")}`
-             },
-         };
-         await fetch(`${localStorage.getItem("serverAddress")}/api/profileData`, options)
-             .then(res => res.json())
-             .then(this.setDefaultValue)
-             .catch(this.errorGetDataProfile);*/
+            .then(res => JSON.parse(res))
+            .then(this.setDefaultValue)
+            .catch(this.errorGetDataProfile);
     }
 
     setDefaultValue(data) {

@@ -6,6 +6,8 @@ import {ProjectStore} from "./ProjectStore";
 import {AddTaskForm} from "./components/AddTaskForm/AddTaskForm";
 import {TasksList} from "./components/TasksList/TasksList.jsx";
 import * as rp from "request-promise";
+import {Header} from "../header/Header";
+import "./Project.scss";
 
 @observer
 @autobind
@@ -19,9 +21,12 @@ class Project extends Component {
             url: `${localStorage.getItem("serverAddress")}/api/project/${this.store.id}`,
             headers: {"x-guide-key": localStorage.getItem("token")},
         };
-        rp(options)
-            .then(data => this.store.data = data)
+        await rp(options)
+            .then(data => {
+                this.store.data = JSON.parse(data)
+            })
             .catch(console.log);
+        console.log(this.store.data);
     }
 
     componentDidUpdate() {
@@ -32,13 +37,36 @@ class Project extends Component {
         this.store.isAddBlockShown = true;
     }
 
+    onHide() {
+        this.store.isTaskListVisible = false;
+    }
+
+    showTasksList() {
+        this.store.isTaskListVisible = true;
+    }
+
+    onHideAddBlock() {
+        this.store.isAddBlockShown = false;
+    }
+
     render() {
         return (
             <>
-                <h1>{this.store.data.title}</h1>
-                <button onClick={this.handleClickOpen} type="button" className="btn btn-primary">Add task</button>
-                {this.store.isAddBlockShown ? <AddTaskForm project_id={this.store.data.id_project}/> : void 0}
-                <TasksList idProject={this.store.id} />
+                <Header title={this.store.data.title}/>
+                <div className={"project"}>
+                    <p>{this.store.data.description}</p>
+                    <button onClick={this.handleClickOpen} type="button" className="btn btn-primary">Add task</button>
+                    <AddTaskForm
+                        project_id={this.store.data.id_project}
+                        isVisible ={this.store.isAddBlockShown}
+                        onHide={this.onHideAddBlock}/>
+                    <button onClick={this.showTasksList}>View Tasks</button>
+                    <TasksList
+                        isVisible={this.store.isTaskListVisible}
+                        idProject={this.store.id}
+                        onClose={this.onHide}
+                    />
+                </div>
             </>
         );
     }

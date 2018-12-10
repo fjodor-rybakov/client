@@ -11,6 +11,7 @@ import {Task} from "./project/components/TasksList/Task/Task";
 import {ProjectList} from "./project-list/ProjectList";
 import {Profile} from "./profile/Profile";
 import {layout} from "./layout";
+import {CreateProject} from "./project/components/CreateProject/CreateProject";
 
 localStorage.setItem("serverAddress", "http://localhost:3001");
 
@@ -51,6 +52,11 @@ ReactDOM.render(
                 exact={true}
                 path={"/project/:id/:taskid"}
                 component={renderPage.bind(this, <Task/>)}
+            />
+            <Route
+                exact={true}
+                path={"/createProject"}
+                component={renderPage.bind(this, <CreateProject/>)}
             />
             <Route component={NotFound}/>
         </Switch>

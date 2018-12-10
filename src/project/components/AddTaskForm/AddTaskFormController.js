@@ -4,11 +4,6 @@ import * as rp from "request-promise";
 
 @autobind
 class AddTaskFormController extends Component {
-    async getUserListByRole(role) {
-        const options = {method: "POST", body: JSON.stringify({role: role})};
-        return await fetch(`${localStorage.getItem("serverAddress")}/api/getUserListByRole`, options)
-            .then(res => res.json())
-    }
 
     async addTask(data) {
         const options = {

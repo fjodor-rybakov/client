@@ -2,28 +2,15 @@
   width: 100%;
   padding: 0 10%;
   display: flex;
-
-  &__header {
-    width: 100%;
-    margin-bottom: 30px;
-    height: 100px;
-    display: inline-block;
-    font-size: 36px;
-    font-weight: bold;
-    letter-spacing: 3px;
-    text-align: left;
-    color: #484848;
-    padding: 30px;
-    text-transform: uppercase;
-    border-bottom: 1px solid grey;
-    background-color: honeydew;
-  }
+  flex-wrap: wrap;
 
   &__card {
     cursor: pointer;
     border: 1px solid #e8f2fe;
     border-radius: 6px;
     margin-right: 20px;
+    margin-bottom: 20px;
+
     &:hover {
       box-shadow: 0 0 19px -6px rgba(222,218,222,1);
     }

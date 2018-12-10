@@ -29,7 +29,7 @@ class layout extends React.Component {
                         </>
                         :
                         <>
-                            <Link className={"header-link"} to={"profile"}>Profile</Link>
+                            <Link className={"header-link"} to={"/profile"}>Profile</Link>
                             <span className={"logout"} onClick={this.handleLogOut}>Log Out</span>
                         </>
                     }

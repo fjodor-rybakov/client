@@ -6,6 +6,7 @@ import {observer} from "mobx-react";
 import Link from "react-router-dom/es/Link";
 import * as rp from "request-promise";
 import "./ProjectList.scss";
+import {Header} from "../header/Header";
 
 @observer
 @autobind
@@ -29,7 +30,7 @@ class ProjectList extends Component {
     render() {
         return (
             <>
-                <div className={"projects__header"}>PROJECTS</div>
+                <Header title={"PROJECTS"}/>
                 <div className={"projects"}>
                     {this.store.data.map((project, index) => {
                         return (
@@ -37,11 +38,13 @@ class ProjectList extends Component {
                                 <div className={"projects__card-container"}>
                                     <p className={"title"}>{project.title}</p>
                                     <p className={"description"}>{project.description}</p>
+                                    <span className={`status status-${project.status}`}>{project.status}</span>
                                 </div>
                             </Link>
                         )}
                     )}
                 </div>
+                <Link to={"createProject"} className="btn btn-info">CREATE PROJECT</Link>
             </>
         );
     }

@@ -1,0 +1,71 @@
+.add-task {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(51,51,51,0.5);
+  &-container {
+    position: relative;
+    margin: 10% auto;
+    background-color: white;
+    border: 1px solid rgba(51,51,51,0.3);
+    border-radius: 6px;
+    padding: 30px;
+    max-width: 500px;
+
+    .form-control {
+      margin-bottom: 20px;
+    }
+
+    .title {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid;
+      margin-bottom: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .close-icon {
+      height: 15px;
+      width: 15px;
+      background: url("img/close.png") no-repeat center top;
+      background-size: cover;
+      margin-left: 5px;
+    }
+
+    .time {
+      width: 60px;
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .team {
+      &-header {
+        border-bottom: 1px solid grey;
+        background-color: honeydew;
+        font-weight: bold;
+        letter-spacing: 1.3px;
+
+      }
+    }
+
+    .close-form-icon {
+      position: absolute;
+      background-image: url("img/close.png");
+      height: 32px;
+      width: 32px;
+      background-size: cover;
+      right: 0;
+      cursor: pointer;
+      top: 0;
+    }
+
+    .selected-container {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+    }
+  }
+}
+

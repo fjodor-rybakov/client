@@ -4,6 +4,7 @@ import autobind from "autobind-decorator";
 import {observer} from "mobx-react";
 import Link from "react-router-dom/es/Link";
 import * as rp from "request-promise";
+import "./TasksList.scss";
 
 @autobind
 @observer
@@ -29,13 +30,21 @@ class TasksList extends React.Component {
 
     render() {
         return (
-            this.store.data.map((task, index) => {
-                return (
-                    <div key={index} className={"card"}>
-                        <Link to={`${task.id_project}/${task.id_task}`}>{task.title}</Link>
-                    </div>
-                )
-            })
+            <>
+                {
+                    this.props.isVisible
+                        ? <div className={"tasks-list"}>
+                            {this.store.data.map((task, index) => {
+                                return (
+                                    <div key={index} className={"card"}>
+                                        <Link to={`${task.id_project}/${task.id_task}`}>{task.title}</Link>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                        : void 0
+                }
+            </>
         )
     }
 }

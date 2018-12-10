@@ -7,7 +7,8 @@ import {AddTaskFormController} from "./AddTaskFormController";
 import {Redirect} from "react-router";
 import {SimpleSelect} from 'react-selectize';
 import 'react-selectize/themes/index.css';
-import "./AddTaskForm.css";
+import "./AddTaskForm.scss";
+import {Utils} from "../../Utils";
 
 @observer
 @autobind
@@ -21,20 +22,16 @@ class AddTaskForm extends Component {
     }
 
     componentWillMount() {
-        this.controller.getUserListByRole("developer")
+        //todo получать только пользователей назначенных на проект
+
+        Utils.getUserListByRole("developer")
             .then((data) => {
                 this.store.developerList = data;
             });
-        this.controller.getUserListByRole("tester")
+        Utils.getUserListByRole("tester")
             .then((data) => {
                 this.store.testerList = data;
             });
-    }
-
-    async componentDidMount() {
-        /*await AppContext.getToken()
-            .then(this.setDefaultValue)
-            .catch(console.log);*/
     }
 
     onSelectDeveloper(selectedOption) {
@@ -123,96 +120,99 @@ class AddTaskForm extends Component {
     }
 
     render() {
+        //todo рефактор select
         if (!localStorage.getItem("token")) {
             return <Redirect to={"/signin"}/>
-        } else {
+        } else if (this.props.isVisible) {
             return (
-                <>
-                    <div>Project id: {this.store.project_id}</div>
-                    <div>Project Manager: {this.store.first_name} {this.store.last_name}</div>
-                    <input
-                        className={"form-control"}
-                        type={"text"}
-                        placeholder={"Task Title"}
-                        required={true}
-                        onChange={this.onChangeTitle}
-                    />
-                    <textarea
-                        className={"form-control"}
-                        placeholder={"Description"}
-                        onChange={this.onChangeDescription}
-                    />
-                    <input
-                        className={"form-control"}
-                        type={"text"}
-                        placeholder={"Time"}
-                        onChange={this.onChangeTime}
-                    />
-                    <div>Team:
-                        <p>Developer:</p>
-                        {this.store.selectedDeveloper.map((data, index) => {
-                            return (
-                                <div key={index}>
-                                    <span>{data.first_name} {data.last_name}</span>
-                                    <div className={"close-icon"} onClick={() => this.removeDeveloper(index)}/>
-                                </div>
-                            )
-                        })}
-                        <SimpleSelect
-                            placeholder="Select developer"
-                            onValueChange={this.onSelectDeveloper}>
-                            {
-                                this.store.developerList && this.store.developerList.map((item, index) => {
-                                    return (
-                                        <option
-                                            key={index}
-                                            value={`${index}`}
-                                        >{`${item.first_name} ${item.last_name}`}
-                                        </option>
-                                    )
-                                })
-                            }
-                        </SimpleSelect>
-                        <p>Tester:</p>
-                        {this.store.selectedTesters.map((data, index) => {
-                            return (
-                                <div key={index} className={"selected-container"}>
-                                    <div>{data.first_name} {data.last_name}</div>
-                                    <div className={"close-icon"} onClick={() => this.removeTester(index)}/>
-                                </div>
-                            )
-                        })}
-                        <SimpleSelect
-                            placeholder="Select tester"
-                            onValueChange={this.onSelectTester}>
-                            {
-                                this.store.testerList && this.store.testerList.map((item, index) => {
-                                    return (
-                                        <option
-                                            key={index}
-                                            value={`${index}`}
-                                        >{`${item.first_name} ${item.last_name}`}
-                                        </option>
-                                    )
-                                })
-                            }
-                        </SimpleSelect>
-                        <div>
+                <div className={"add-task"}>
+                    <div className={"add-task-container"}>
+                        <div onClick={this.props.onHide} className={"close-form-icon"}/>
+                        <input
+                            className={"title"}
+                            type={"text"}
+                            placeholder={"Task Title"}
+                            required={true}
+                            onChange={this.onChangeTitle}
+                        />
+                        <textarea
+                            className={"form-control"}
+                            placeholder={"Description"}
+                            onChange={this.onChangeDescription}
+                        />
+                        <input
+                            className={"form-control time"}
+                            type={"text"}
+                            placeholder={"Time"}
+                            onChange={this.onChangeTime}
+                        />
+                        <span>(hours)</span>
+                        <div className={"team"}>
+                            <p className={"team-header"}>Team:</p>
+                            <p>Developer:</p>
+                            {this.store.selectedDeveloper.map((data, index) => {
+                                return (
+                                    <div key={index}>
+                                        <span>{data.first_name} {data.last_name}</span>
+                                        <div className={"close-icon"} onClick={() => this.removeDeveloper(index)}/>
+                                    </div>
+                                )
+                            })}
+                            <SimpleSelect
+                                placeholder="Select developer"
+                                onValueChange={this.onSelectDeveloper}>
+                                {
+                                    this.store.developerList && this.store.developerList.map((item, index) => {
+                                        return (
+                                            <option
+                                                key={index}
+                                                value={`${index}`}
+                                            >{`${item.first_name} ${item.last_name}`}
+                                            </option>
+                                        )
+                                    })
+                                }
+                            </SimpleSelect>
+                            <p>Tester:</p>
+                            {this.store.selectedTesters.map((data, index) => {
+                                return (
+                                    <div key={index} className={"selected-container"}>
+                                        <div>{data.first_name} {data.last_name}</div>
+                                        <div className={"close-icon"} onClick={() => this.removeTester(index)}/>
+                                    </div>
+                                )
+                            })}
+                            <SimpleSelect
+                                placeholder="Select tester"
+                                onValueChange={this.onSelectTester}>
+                                {
+                                    this.store.testerList && this.store.testerList.map((item, index) => {
+                                        return (
+                                            <option
+                                                key={index}
+                                                value={`${index}`}
+                                            >{`${item.first_name} ${item.last_name}`}
+                                            </option>
+                                        )
+                                    })
+                                }
+                            </SimpleSelect>
+                            <div>Project Manager: {this.store.first_name} {this.store.last_name}</div>
                             <button
                                 onClick={this.onSubmit}
                                 type="button"
                                 className="btn btn-success"
                             >Save Task
                             </button>
+                            {
+                                this.store.error !== "" &&
+                                <div className={"alert alert-danger"} role={"alert"}>{this.store.error}</div>
+                            }
                         </div>
-                        {
-                            this.store.error !== "" &&
-                            <div className={"alert alert-danger"} role={"alert"}>{this.store.error}</div>
-                        }
                     </div>
-                </>
+                </div>
             );
-        }
+        } else return <div/>;
     }
 }
 

@@ -31,6 +31,8 @@ class ProjectStore {
     set isAddBlockShown(data) {
         this._isAddBlockShown = data;
     }
+
+    @observable isTaskListVisible = false;
 }
 
 export {ProjectStore};

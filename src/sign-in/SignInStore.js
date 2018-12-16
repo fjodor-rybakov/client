@@ -1,5 +1,5 @@
 import {observable} from "mobx";
-import autobind from "autobind-decorator";
+import {autobind} from "core-decorators";
 
 @autobind
 class SignInStore {

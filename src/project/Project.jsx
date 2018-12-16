@@ -1,6 +1,6 @@
 import {Component} from "react";
 import * as React from "react";
-import autobind from "autobind-decorator";
+import {autobind} from "core-decorators";
 import {observer} from "mobx-react";
 import {ProjectStore} from "./ProjectStore";
 import {AddTaskForm} from "./components/AddTaskForm/AddTaskForm";
@@ -9,10 +9,11 @@ import * as rp from "request-promise";
 import {Header} from "../header/Header";
 import "./Project.scss";
 
-@observer
 @autobind
+@observer
 class Project extends Component {
     store = new ProjectStore();
+    title = "";
 
     async componentWillMount() {
         this.store.id = window.location.pathname.split('/')[2];
@@ -22,11 +23,19 @@ class Project extends Component {
             headers: {"x-guide-key": localStorage.getItem("token")},
         };
         await rp(options)
-            .then(data => {
-                this.store.data = JSON.parse(data)
-            })
+            .then(JSON.parse)
+            .then(this.successGetData)
             .catch(console.log);
-        console.log(this.store.data);
+        console.log(this.title);
+        this.forceUpdate();
+        console.log(this.title);
+    }
+
+    successGetData(data) {
+        console.log(data);
+        this.store.data = data;
+        this.store.title = data.title;
+        console.log("TITLE", this.store.title);
     }
 
     componentDidUpdate() {
@@ -50,9 +59,10 @@ class Project extends Component {
     }
 
     render() {
+        console.log("RENDER", this.title);
         return (
             <>
-                <Header title={this.store.data.title}/>
+                <Header title={this.store.title}/>
                 <div className={"project"}>
                     <p>{this.store.data.description}</p>
                     <button onClick={this.handleClickOpen} type="button" className="btn btn-primary">Add task</button>

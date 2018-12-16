@@ -1,5 +1,5 @@
 import * as React from "react";
-import autobind from "autobind-decorator";
+import {autobind} from "core-decorators";
 import {Link} from 'react-router-dom';
 import "./layout.scss";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import {TaskStore} from "./TaskStore";
-import autobind from "autobind-decorator";
+import {autobind} from "core-decorators";
 import {observer} from "mobx-react/index";
 import * as rp from "request-promise";
 

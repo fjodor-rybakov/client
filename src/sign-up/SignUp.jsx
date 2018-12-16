@@ -3,7 +3,7 @@ import {Component} from "react";
 import {Link} from "react-router-dom";
 import {observer} from "mobx-react";
 import {SignUpStore} from "./SignUpStore";
-import autobind from "autobind-decorator";
+import {autobind} from "core-decorators";
 import {Redirect} from "react-router";
 import * as rp from "request-promise";
 

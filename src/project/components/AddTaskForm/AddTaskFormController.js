@@ -1,4 +1,4 @@
-import autobind from "autobind-decorator";
+import {autobind} from "core-decorators";
 import {Component} from "react";
 import * as rp from "request-promise";
 

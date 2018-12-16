@@ -1,6 +1,6 @@
 import {Component} from "react";
 import * as React from "react";
-import autobind from "autobind-decorator";
+import {autobind} from "core-decorators";
 import {observer} from "mobx-react/index";
 import {AddTaskFormStore} from "./AddTaskFormStore";
 import {AddTaskFormController} from "./AddTaskFormController";

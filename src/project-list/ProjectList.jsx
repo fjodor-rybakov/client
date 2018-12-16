@@ -1,7 +1,7 @@
 import {Component} from "react";
 import {ProjectListStore} from "./ProjectListStore";
 import * as React from "react";
-import autobind from "autobind-decorator";
+import {autobind} from "core-decorators";
 import {observer} from "mobx-react";
 import Link from "react-router-dom/es/Link";
 import * as rp from "request-promise";

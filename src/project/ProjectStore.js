@@ -1,4 +1,4 @@
-import autobind from "autobind-decorator";
+import {autobind} from "core-decorators";
 import {observable} from "mobx/lib/mobx";
 
 @autobind
@@ -33,6 +33,7 @@ class ProjectStore {
     }
 
     @observable isTaskListVisible = false;
+    @observable title = "";
 }
 
 export {ProjectStore};

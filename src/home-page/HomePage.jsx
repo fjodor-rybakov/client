@@ -3,7 +3,7 @@ import {Component} from "react";
 import {Link} from 'react-router-dom';
 import "./HomePageStyle.scss";
 import {observer} from "mobx-react";
-import autobind from "autobind-decorator";
+import {autobind} from "core-decorators";
 import {Header} from "../header/Header";
 
 @observer

@@ -3,7 +3,7 @@ import {observer} from "mobx-react";
 import {Redirect} from "react-router";
 import {ProfileStore} from "./ProfileStore";
 import * as React from "react";
-import autobind from "autobind-decorator";
+import {autobind} from "core-decorators";
 import "./Profile.css";
 import {Link} from "react-router-dom";
 import * as rp from "request-promise";

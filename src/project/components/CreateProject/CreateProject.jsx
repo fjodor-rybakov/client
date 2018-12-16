@@ -2,7 +2,7 @@ import * as React from "react";
 import {SimpleSelect} from "react-selectize";
 import {CreateProjectStore} from "./CreateProjectStore";
 import {Utils} from "../../Utils";
-import autobind from "autobind-decorator";
+import {autobind} from "core-decorators";
 import {observer} from "mobx-react/index";
 
 @observer

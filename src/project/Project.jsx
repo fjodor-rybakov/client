@@ -26,16 +26,10 @@ class Project extends Component {
             .then(JSON.parse)
             .then(this.successGetData)
             .catch(console.log);
-        console.log(this.title);
-        this.forceUpdate();
-        console.log(this.title);
     }
 
     successGetData(data) {
-        console.log(data);
         this.store.data = data;
-        this.store.title = data.title;
-        console.log("TITLE", this.store.title);
     }
 
     componentDidUpdate() {
@@ -59,10 +53,9 @@ class Project extends Component {
     }
 
     render() {
-        console.log("RENDER", this.title);
         return (
             <>
-                <Header title={this.store.title}/>
+                <Header title={this.store.data.title}/>
                 <div className={"project"}>
                     <p>{this.store.data.description}</p>
                     <button onClick={this.handleClickOpen} type="button" className="btn btn-primary">Add task</button>

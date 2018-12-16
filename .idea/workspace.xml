@@ -2,32 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec09f3bb-ddbe-4ed5-baf9-153ab1692745" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/home-page/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/home-page/HomePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/home-page/HomePageStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/home-page/HomePageStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profile/ProfileStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/ProfileStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project-list/ProjectList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/project-list/ProjectList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project-list/ProjectListStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/project-list/ProjectListStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/Project.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Project.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/ProjectStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/ProjectStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskFormController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskFormController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskFormStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskFormStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/components/CreateProject/CreateProject.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/components/CreateProject/CreateProject.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/components/CreateProject/CreateProjectStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/components/CreateProject/CreateProjectStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/components/TasksList/Task/TaskStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/components/TasksList/Task/TaskStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/components/TasksList/TasksList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/components/TasksList/TasksList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/components/TasksList/TasksListStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/components/TasksList/TasksListStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sign-in/SignInStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sign-in/SignInStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sign-in/SingIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/sign-in/SingIn.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sign-up/SignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/sign-up/SignUp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sign-up/SignUpStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sign-up/SignUpStore.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -57,7 +33,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="js" value="18" />
+          <entry key="js" value="19" />
           <entry key="json" value="2" />
           <entry key="jsx" value="28" />
           <entry key="scss" value="4" />
@@ -68,7 +44,7 @@
         <counts>
           <entry key="JSON" value="2" />
           <entry key="JSX Harmony" value="28" />
-          <entry key="JavaScript" value="18" />
+          <entry key="JavaScript" value="19" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="SCSS" value="4" />
           <entry key="TypeScript" value="1" />
@@ -78,13 +54,13 @@
         <counts>
           <entry key="js" value="110" />
           <entry key="json" value="12" />
-          <entry key="jsx" value="2120" />
+          <entry key="jsx" value="2123" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="12" />
-          <entry key="JSX Harmony" value="2120" />
+          <entry key="JSX Harmony" value="2123" />
           <entry key="JavaScript" value="110" />
         </counts>
       </usages-collector>
@@ -98,15 +74,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="48" selection-start-line="48" selection-end-line="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskFormController.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -134,11 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/Project.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="34" column="26" lean-forward="true" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+            <state relative-caret-position="187">
+              <caret line="31" column="20" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -188,6 +155,18 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/project/ProjectStore.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="194">
+              <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/Utils.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -229,7 +208,6 @@
         <option value="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.scss" />
         <option value="$PROJECT_DIR$/src/header/Header.jsx" />
         <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/project/ProjectStore.js" />
         <option value="$PROJECT_DIR$/src/project-list/ProjectList.jsx" />
         <option value="$PROJECT_DIR$/src/layout.jsx" />
         <option value="$PROJECT_DIR$/src/home-page/HomePage.jsx" />
@@ -251,6 +229,7 @@
         <option value="$PROJECT_DIR$/src/sign-up/SignUpStore.js" />
         <option value="$PROJECT_DIR$/src/sign-up/SignUp.jsx" />
         <option value="$PROJECT_DIR$/src/project/Project.jsx" />
+        <option value="$PROJECT_DIR$/src/project/ProjectStore.js" />
       </list>
     </option>
   </component>
@@ -274,7 +253,7 @@
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="28" />
     <option name="width" value="1346" />
     <option name="height" value="688" />
@@ -461,12 +440,12 @@
       <workItem from="1544892523965" duration="5485000" />
       <workItem from="1544956607724" duration="6799000" />
       <workItem from="1544966277342" duration="5307000" />
-      <workItem from="1544990262431" duration="913000" />
+      <workItem from="1544990262431" duration="1646000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64971000" />
+    <option name="totallyTimeSpent" value="65704000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -667,13 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/ProjectStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/components/TasksList/TasksList.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -801,10 +773,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/Project.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="34" column="26" lean-forward="true" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+        <state relative-caret-position="187">
+          <caret line="31" column="20" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/ProjectStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>

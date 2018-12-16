@@ -33,7 +33,6 @@ class ProjectStore {
     }
 
     @observable isTaskListVisible = false;
-    @observable title = "";
 }
 
 export {ProjectStore};

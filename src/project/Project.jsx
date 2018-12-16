@@ -62,7 +62,8 @@ class Project extends Component {
                     <AddTaskForm
                         project_id={this.store.data.id_project}
                         isVisible ={this.store.isAddBlockShown}
-                        onHide={this.onHideAddBlock}/>
+                        onHide={this.onHideAddBlock}
+                    />
                     <button onClick={this.showTasksList}>View Tasks</button>
                     <TasksList
                         isVisible={this.store.isTaskListVisible}

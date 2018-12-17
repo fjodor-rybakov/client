@@ -10,7 +10,7 @@ import {Project} from "./project/Project";
 import {Task} from "./project/components/TasksList/Task/Task";
 import {ProjectList} from "./project-list/ProjectList";
 import {Profile} from "./profile/Profile";
-import {layout} from "./layout";
+import {layout} from "./layout/layout";
 import {CreateProject} from "./project/components/CreateProject/CreateProject";
 
 localStorage.setItem("serverAddress", "http://localhost:3001");

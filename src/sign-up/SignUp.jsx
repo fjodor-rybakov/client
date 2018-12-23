@@ -12,6 +12,7 @@ import {Header} from "../header/Header";
 @autobind
 class SignUp extends Component {
     store = new SignUpStore();
+    validateRef = React.createRef();
 
     constructor(props) {
         super(props);
@@ -49,8 +50,18 @@ class SignUp extends Component {
             json: true
         };
         rp(options)
-            .then(data => this.store.validateErr = data)
-            .catch(console.log);
+            .then(this.successUpdateProfile)
+            .catch(this.rejectUpdateProfile);
+    }
+
+    successUpdateProfile(data) {
+        this.store.validateErr = "Success";
+        this.validateRef.current.className = "alert alert-success";
+    }
+
+    rejectUpdateProfile() {
+        this.store.validateErr = "Incorrect new data user";
+        this.validateRef.current.className = "alert alert-danger";
     }
 
     validateForm(email, password, repeatPass) {
@@ -75,7 +86,7 @@ class SignUp extends Component {
                     <div className={"sign-up container"}>
                         {
                             this.store.validateErr !== "" &&
-                            <div className="alert alert-danger" role="alert">{this.store.validateErr}</div>
+                            <div role="alert" ref={this.validateRef}>{this.store.validateErr}</div>
                         }
                         <form onSubmit={this.handleSubmit} className={"form"}>
                             <div className="form-group">

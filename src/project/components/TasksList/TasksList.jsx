@@ -20,7 +20,10 @@ class TasksList extends React.Component {
         const options = {
             method: "GET",
             url: `${localStorage.getItem("serverAddress")}/api/tasksList/${this.store.idProject}`,
-            headers: {"x-guide-key": localStorage.getItem("token")},
+            headers: {
+                "x-guide-key": localStorage.getItem("token"),
+                "Cache-Control": "private, max-age=0, no-cache"
+            },
         };
         rp(options)
             .then(res => JSON.parse(res))

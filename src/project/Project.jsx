@@ -20,7 +20,10 @@ class Project extends Component {
         const options = {
             method: "GET",
             url: `${localStorage.getItem("serverAddress")}/api/project/${this.store.id}`,
-            headers: {"x-guide-key": localStorage.getItem("token")},
+            headers: {
+                "x-guide-key": localStorage.getItem("token"),
+                "Cache-Control": "private, max-age=0, no-cache"
+            },
         };
         await rp(options)
             .then(JSON.parse)

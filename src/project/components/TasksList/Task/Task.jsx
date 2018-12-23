@@ -15,7 +15,10 @@ class Task extends React.Component {
         const options = {
             method: "GET",
             url: `${localStorage.getItem("serverAddress")}/api/tracks/${this.store.id}`,
-            headers: {"x-guide-key": localStorage.getItem("token")},
+            headers: {
+                "x-guide-key": localStorage.getItem("token"),
+                "Cache-Control": "private, max-age=0, no-cache"
+            },
         };
         rp(options)
             .then(this.setDefaultValue)
@@ -26,7 +29,10 @@ class Task extends React.Component {
         const options = {
             method: "POST",
             url: `${localStorage.getItem("serverAddress")}/api/track`,
-            headers: {"x-guide-key": localStorage.getItem("token")},
+            headers: {
+                "x-guide-key": localStorage.getItem("token"),
+                "Cache-Control": "private, max-age=0, no-cache"
+            },
             body: {
                 id_task: this.store.id,
                 id_user: this.store.id_user,

@@ -18,7 +18,10 @@ class Profile extends Component {
         const options = {
             method: 'GET',
             uri: `${localStorage.getItem("serverAddress")}/api/profile`,
-            headers: {"x-guide-key": localStorage.getItem("token")},
+            headers: {
+                "x-guide-key": localStorage.getItem("token"),
+                "Cache-Control": "private, max-age=0, no-cache"
+            },
         };
         rp(options)
             .then(res => JSON.parse(res))
@@ -77,7 +80,8 @@ class Profile extends Component {
             method: "PUT",
             uri: `${localStorage.getItem("serverAddress")}/api/profile`,
             headers: {
-                "x-guide-key": localStorage.getItem("token")
+                "x-guide-key": localStorage.getItem("token"),
+                "Cache-Control": "private, max-age=0, no-cache"
             },
             body: {
                 first_name: this.store.first_name,
@@ -105,7 +109,7 @@ class Profile extends Component {
     }
 
     render() {
-        if (!localStorage.getItem("token")) {
+        if (!localStorage.getItem("token") || this.store.validateErr !== "") {
             return <Redirect to={"/signin"}/>
         } else {
             return (

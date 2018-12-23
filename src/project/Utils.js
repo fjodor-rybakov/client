@@ -12,7 +12,10 @@ class Utils {
         const options = {
             method: "GET",
             url: `${localStorage.getItem("serverAddress")}/api/getProjectTypes`,
-            headers: {"x-guide-key": localStorage.getItem("token")},
+            headers: {
+                "x-guide-key": localStorage.getItem("token"),
+                "Cache-Control": "private, max-age=0, no-cache"
+            },
         };
         await rp(options)
             .then(res => JSON.parse(res))

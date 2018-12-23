@@ -5,8 +5,8 @@ import {ProfileStore} from "./ProfileStore";
 import * as React from "react";
 import {autobind} from "core-decorators";
 import "./Profile.css";
-import {Link} from "react-router-dom";
 import * as rp from "request-promise";
+import {Button} from "../button/Button";
 
 @observer
 @autobind
@@ -146,11 +146,7 @@ class Profile extends Component {
                             id={"user-role"}
                             defaultValue={this.store.role}
                         />
-                        <button onClick={this.saveDataProfile} className={"btn btn-primary"} id={"save-button"}>Save
-                        </button>
-                        <div>
-                            <Link className={"btn btn-primary"} to={"/"} id={"back"}>Back</Link>
-                        </div>
+                        <Button onClick={this.saveDataProfile} text={"Save"}/>
                         {
                             this.store.validateErr !== "" &&
                             <div role={"alert"} ref={this.validateRef}>{this.store.validateErr}</div>

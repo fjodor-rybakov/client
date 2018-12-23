@@ -31,7 +31,6 @@ class CreateProjectStore {
     }
 
     getTypes() {
-        console.log("hbyy", this.projectTypes);
         return this.projectTypes.map((item, index) => { return {label: item.name, value: index} });
     }
 }

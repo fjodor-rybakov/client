@@ -6,6 +6,7 @@ class TaskStore {
     @observable _id = "";
     @observable id_user = 0;
     @observable isFormShown = false;
+    @observable data = [];
     startData;
     startTime;
     endData;

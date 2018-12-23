@@ -43,8 +43,8 @@ class ProjectList extends Component {
                             </Link>
                         )}
                     )}
+                    <Link to={"createProject"} className="btn">CREATE PROJECT</Link>
                 </div>
-                <Link to={"createProject"} className="btn btn-info">CREATE PROJECT</Link>
             </>
         );
     }

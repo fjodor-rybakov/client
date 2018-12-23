@@ -1,11 +1,12 @@
 import * as React from "react";
 import {Component} from "react";
-import {Link} from "react-router-dom";
 import {observer} from "mobx-react";
 import {SignUpStore} from "./SignUpStore";
 import {autobind} from "core-decorators";
 import {Redirect} from "react-router";
 import * as rp from "request-promise";
+import "./SignUpStyle.scss";
+import {Header} from "../header/Header";
 
 @observer
 @autobind
@@ -69,46 +70,44 @@ class SignUp extends Component {
             return <Redirect to={"/"}/>
         } else {
             return (
-                <div className={"container"}>
-                    <h1>Регистрация</h1>
-                    <div className={"switch-authorization"}>
-                        <Link className={"btn btn-primary"} to={"/signin"}>Sign In</Link>
+                <>
+                    <Header title={"Sign Up"}/>
+                    <div className={"sign-up container"}>
+                        {
+                            this.store.validateErr !== "" &&
+                            <div className="alert alert-danger" role="alert">{this.store.validateErr}</div>
+                        }
+                        <form onSubmit={this.handleSubmit} className={"form"}>
+                            <div className="form-group">
+                                <label htmlFor="exampleInputEmail1">Email address</label>
+                                <input
+                                    name="email"
+                                    onChange={this.handleChangeLogin}
+                                    className="form-control"
+                                    placeholder="Enter email"
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="exampleInputPassword1">Password</label>
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    placeholder="Password"
+                                    onChange={this.handleChangePassword}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="exampleInputPassword1">Repeat Password</label>
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    onChange={this.handleChangeRepeatPassword}
+                                    placeholder="Repeat Password"/>
+                            </div>
+                            <button type="submit" className="btn">Sign Up</button>
+                        </form>
                     </div>
-                    <form onSubmit={this.handleSubmit} className={"form"}>
-                        <div className="form-group">
-                            <label htmlFor="exampleInputEmail1">Email address</label>
-                            <input
-                                name="email"
-                                onChange={this.handleChangeLogin}
-                                className="form-control"
-                                placeholder="Enter email"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="exampleInputPassword1">Password</label>
-                            <input
-                                type="password"
-                                className="form-control"
-                                placeholder="Password"
-                                onChange={this.handleChangePassword}
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="exampleInputPassword1">Password</label>
-                            <input
-                                type="password"
-                                className="form-control"
-                                onChange={this.handleChangeRepeatPassword}
-                                placeholder="Password"/>
-                        </div>
-                        <button type="submit" className="btn btn-primary">Submit</button>
-                    </form>
-                    {
-                        this.store.validateErr !== "" &&
-                        <div className="alert alert-danger" role="alert">{this.store.validateErr}</div>
-                    }
-                    <Link className={"btn btn-primary"} to={"/"}>Back to home page</Link>
-                </div>
+                </>
             );
         }
     }

@@ -1,0 +1,53 @@
+.create-project {
+  .alert {
+    margin-bottom: 20px;
+  }
+  .input-field {
+    height: 60px;
+    margin-bottom: 20px;
+    border: 1px solid;
+    border-color: #d9d9d9 #ccc #b3b3b3;
+    border-radius: 6px;
+    font-size: 18px;
+    display: block;
+    padding: 0 10px;
+    width: 100%;
+  }
+
+  .react-selectize {
+    margin-bottom: 20px;
+  }
+
+  .react-selectize.default.root-node .react-selectize-control {
+    background: white none!important;
+  }
+
+  .is-private {
+    display: flex;
+    align-content: center;
+    &__text {
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-align: left;
+      color: #484848;
+      text-transform: uppercase;
+      margin-right: 10px;
+      display: flex;
+    }
+
+    &__checkbox {
+      display: flex;
+    }
+  }
+
+  .btn {
+    position: absolute;
+    bottom: 20px;
+    right: 15px;
+  }
+}
+
+.container {
+  position: relative;
+  padding-bottom: 20px;
+}

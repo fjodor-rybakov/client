@@ -4,6 +4,9 @@ import {CreateProjectStore} from "./CreateProjectStore";
 import {Utils} from "../../Utils";
 import {autobind} from "core-decorators";
 import {observer} from "mobx-react/index";
+import {Header} from "../../../header/Header";
+import "./CreateProject.scss";
+import {Button} from "../../../button/Button";
 
 @observer
 @autobind
@@ -44,45 +47,46 @@ class CreateProject extends React.Component {
     render() {
         return (
             <>
-                <input placeholder={"title"} onChange={this.onChangeTitle}/>
-                <textarea placeholder={"description"} onChange={this.onChangeDescription}/>
-                <SimpleSelect
-                    options={this.getOptions(this.store.clientsList)}
-                    placeholder="Select client"
-                    onValueChange={this.onSelectClient}
-                />
-                <SimpleSelect
-                    placeholder="Select project manager"
-                    onValueChange={this.onSelectPM}
-                    options={this.getOptions(this.store.pm_list)}
-                />
-                <SimpleSelect
-                    placeholder="Select developers"
-                    onValueChange={this.onSelectDeveloper}
-                    options={this.getOptions(this.store.developersList)}
-                />
-                <SimpleSelect
-                    placeholder="Select testers"
-                    onValueChange={this.onSelectTester}
-                    options={this.getOptions(this.store.testersList)}
-                />
-                <SimpleSelect
-                    placeholder="Select project type"
-                    onValueChange={this.onSelectType}
-                    options={this.store.getTypes()}
-                />
-                <span>is Private</span>
-                <input type={"checkbox"} onChange={this.onCheck}/>
-                <button
-                    onClick={this.onSubmit}
-                    type="button"
-                    className="btn btn-success"
-                >Save Project
-                </button>
-                {
-                    this.store.error !== "" &&
-                    <div className={"alert alert-danger"} role={"alert"}>{this.store.error}</div>
-                }
+                <Header title={"create project"}/>
+                <div className={"create-project container"}>
+                    {
+                        this.store.error !== "" &&
+                        <div className={"alert alert-danger"} role={"alert"}>{this.store.error}</div>
+                    }
+                    <input className={"input-field"} placeholder={"title"} onChange={this.onChangeTitle} maxLength={30}/>
+                    <textarea className={"input-field"} placeholder={"description"}
+                              onChange={this.onChangeDescription} maxLength={140}/>
+                    <SimpleSelect
+                        options={this.getOptions(this.store.clientsList)}
+                        placeholder="Select client"
+                        onValueChange={this.onSelectClient}
+                    />
+                    <SimpleSelect
+                        placeholder="Select project manager"
+                        onValueChange={this.onSelectPM}
+                        options={this.getOptions(this.store.pm_list)}
+                    />
+                    <SimpleSelect
+                        placeholder="Select developers"
+                        onValueChange={this.onSelectDeveloper}
+                        options={this.getOptions(this.store.developersList)}
+                    />
+                    <SimpleSelect
+                        placeholder="Select testers"
+                        onValueChange={this.onSelectTester}
+                        options={this.getOptions(this.store.testersList)}
+                    />
+                    <SimpleSelect
+                        placeholder="Select project type"
+                        onValueChange={this.onSelectType}
+                        options={this.store.getTypes()}
+                    />
+                    <div className={"is-private"}>
+                        <span className={"is-private__text"}>Make project private</span>
+                        <input className={"is-private__checkbox"} type={"checkbox"} onChange={this.onCheck}/>
+                    </div>
+                    <Button onClick={this.onSubmit} text={"Save Project"}/>
+                </div>
             </>
         )
     };
@@ -118,7 +122,7 @@ class CreateProject extends React.Component {
 
     }
 
-    onError(){
+    onError() {
         this.store.error = "Произошла ошибка при отправке запроса.";
     }
 

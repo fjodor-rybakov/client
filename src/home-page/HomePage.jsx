@@ -17,7 +17,7 @@ class HomePage extends Component {
                     <p>Some info...</p>
                 </div>
                 <p className={"button-order"}>
-                    <Link className={"btn btn-info"} id={"create-project"} to={"/projectList"}>View Projects</Link>
+                    <Link className={"btn"} id={"create-project"} to={"/projectList"}>View Projects</Link>
                 </p>
             </div>
         );

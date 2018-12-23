@@ -3,6 +3,7 @@ import {TaskStore} from "./TaskStore";
 import {autobind} from "core-decorators";
 import {observer} from "mobx-react/index";
 import * as rp from "request-promise";
+import "./Task.scss";
 
 @autobind
 @observer
@@ -10,7 +11,7 @@ class Task extends React.Component {
     store = new TaskStore();
 
     async componentWillMount() {
-        this.store.id = window.location.pathname.split('/')[3];
+        this.store.id = window.location.pathname.split('/')[2];
         const options = {
             method: "GET",
             url: `${localStorage.getItem("serverAddress")}/api/tracks/${this.store.id}`,
@@ -22,7 +23,6 @@ class Task extends React.Component {
     }
 
     async addTrack() {
-        console.log(this.store.endData, this.store.endTime);
         const options = {
             method: "POST",
             url: `${localStorage.getItem("serverAddress")}/api/track`,
@@ -89,15 +89,15 @@ class Task extends React.Component {
 
     render() {
         return (
-            <>
-                <div>id = {this.store.id}</div>
-                <div onClick={this.showForm}>Add track</div>
+            <div className={"task container"}>
+                <h4>{this.store.data.title}</h4>
+                <div className={"add-icon"} onClick={this.showForm}/>
                 {
                     this.store.isFormShown
                         ? this.renderForm()
                         : void 0
                 }
-            </>
+            </div>
         )
     }
 }

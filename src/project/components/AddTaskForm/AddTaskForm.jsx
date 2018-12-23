@@ -59,7 +59,7 @@ class AddTaskForm extends Component {
     onSubmit() {
         const data = {
             id_project: this.store.project_id,
-            id_user_manager: this.store.id_user,
+            id_user_manager: 1,
             description: this.store.description,
             time: +this.store.time,
             title: this.store.title,
@@ -76,13 +76,14 @@ class AddTaskForm extends Component {
     }
 
     verifyData(data) {
+        console.log(!data.id_project, !data.id_user_manager, !data.description, !data.time, !data.title, !data.developers);
         return !(!data.id_project || !data.id_user_manager || !data.description || !data.time
             || !data.title || !data.developers)
 
     }
 
     onSuccessCreateTask() {
-
+        this.props.onHide();
     }
 
     setDefaultValue(data) {
@@ -99,7 +100,6 @@ class AddTaskForm extends Component {
     onChangeTime(event) {
         this.store.time = event.target.value;
     }
-
 
     onChangeDescription(event) {
         this.store.description = event.target.value;

@@ -60,7 +60,7 @@ class Project extends Component {
                     <p>{this.store.data.description}</p>
                     <button onClick={this.handleClickOpen} type="button" className="btn btn-primary">Add task</button>
                     <AddTaskForm
-                        project_id={this.store.data.id_project}
+                        project_id={this.store.id}
                         isVisible ={this.store.isAddBlockShown}
                         onHide={this.onHideAddBlock}
                     />

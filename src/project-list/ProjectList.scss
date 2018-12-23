@@ -4,6 +4,12 @@
   display: flex;
   flex-wrap: wrap;
 
+  .btn {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+  }
+
   &__card {
     cursor: pointer;
     border: 1px solid #e8f2fe;

@@ -54,7 +54,7 @@ class SignUp extends Component {
             .catch(this.rejectUpdateProfile);
     }
 
-    successUpdateProfile(data) {
+    successUpdateProfile() {
         this.store.validateErr = "Success";
         this.validateRef.current.className = "alert alert-success";
     }

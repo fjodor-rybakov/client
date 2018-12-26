@@ -32,6 +32,7 @@ class TasksList extends React.Component {
     }
 
     render() {
+        console.log(this.store.data);
         return (
             <>
                 {
@@ -39,9 +40,12 @@ class TasksList extends React.Component {
                         ? <div className={"tasks-list"}>
                             {this.store.data.map((task, index) => {
                                 return (
-                                    <div key={index} className={"card"}>
-                                        <Link to={`${task.id_project}/${task.id_task}`}>{task.title}</Link>
-                                    </div>
+                                    <Link to={`${task.id_project}/${task.id_task}`} key={index}>
+                                        <div className={"card"}>
+                                            <p className={"tasks-list__header"}>{task.title}</p>
+                                            <p className={"tasks-list__status"}>{task.status}</p>
+                                        </div>
+                                    </Link>
                                 )
                             })}
                         </div>

@@ -4,6 +4,7 @@ import {autobind} from "core-decorators";
 import {observer} from "mobx-react/index";
 import * as rp from "request-promise";
 import "./Task.scss";
+import {Button} from "../../../../button/Button";
 
 @autobind
 @observer
@@ -11,7 +12,7 @@ class Task extends React.Component {
     store = new TaskStore();
 
     async componentWillMount() {
-        this.store.id = window.location.pathname.split('/')[2];
+        this.store.id = window.location.pathname.split('/')[3];
         const options = {
             method: "GET",
             url: `${localStorage.getItem("serverAddress")}/api/tracks/${this.store.id}`,
@@ -22,6 +23,18 @@ class Task extends React.Component {
         };
         rp(options)
             .then(this.setDefaultValue)
+            .catch(console.log);
+
+        const task = {
+            method: "GET",
+            url: `${localStorage.getItem("serverAddress")}/api/task/${this.store.id}`,
+            headers: {
+                "x-guide-key": localStorage.getItem("token"),
+                "Cache-Control": "private, max-age=0, no-cache"
+            },
+        };
+        rp(task)
+            .then(this.setTaskData)
             .catch(console.log);
     }
 
@@ -74,19 +87,24 @@ class Task extends React.Component {
     }
 
     setDefaultValue(data) {
-        this.store.data = data;
+        this.store.data = JSON.parse(data);
         this.store.id_user = +data.id_user;
+    }
+
+    setTaskData(data){
+        this.store.taskData = JSON.parse(data);
+        console.log(this.store.taskData);
     }
 
     renderForm() {
         return (
             <>
                 <div>Add</div>
-                <input type={"date"} required={true} onChange={this.onChangeStartData}/>
-                <input type={"time"} required={true} onChange={this.onChangeStartTime}/>
-                <input type={"date"} required={true} onChange={this.onChangeEndData}/>
-                <input type={"time"} required={true} onChange={this.onChangeEndTime}/>
-                <textarea onChange={this.onChangeDescription}/>
+                <input type={"date"} className={"add-form-item"} required={true} onChange={this.onChangeStartData}/>
+                <input type={"time"} className={"add-form-item"} required={true} onChange={this.onChangeStartTime}/>
+                <input type={"date"} required={true} className={"add-form-item"} onChange={this.onChangeEndData}/>
+                <input type={"time"} required={true} className={"add-form-item"} onChange={this.onChangeEndTime}/>
+                <textarea className={"add-form-item"} onChange={this.onChangeDescription}/>
                 <button onClick={this.addTrack}>Add</button>
             </>
         )
@@ -96,12 +114,20 @@ class Task extends React.Component {
     render() {
         return (
             <div className={"task container"}>
-                <h4>{this.store.data.title}</h4>
-                <div className={"add-icon"} onClick={this.showForm}/>
+                <h4>{this.store.taskData.title}</h4>
+                <p className={"task_description"}>{this.store.taskData.description}</p>
+                <Button text ={"Add Time"} onClick={this.showForm}/>
                 {
                     this.store.isFormShown
                         ? this.renderForm()
                         : void 0
+                }
+                {
+                    this.store.data.map((item, index) => {
+                        return (
+                            <p>{item.title}</p>
+                        )
+                    })
                 }
             </div>
         )

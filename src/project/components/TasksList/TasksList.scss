@@ -1,3 +1,20 @@
 .tasks-list {
+  .card {
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    height: 80px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 300px;
+    padding: 10px;
+  }
 
+  &__header {
+    text-overflow: ellipsis;
+    font-size: 18px;
+  }
+
+  &__header {
+    text-overflow: ellipsis;
+  }
 }

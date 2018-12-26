@@ -75,7 +75,7 @@ class Profile extends Component {
         })
     }
 
-    async saveDataProfile() {
+    saveDataProfile() {
         const options = {
             method: "PUT",
             uri: `${localStorage.getItem("serverAddress")}/api/profile`,
@@ -109,7 +109,7 @@ class Profile extends Component {
     }
 
     render() {
-        if (!localStorage.getItem("token") || this.store.validateErr !== "") {
+        if (!localStorage.getItem("token")) {
             return <Redirect to={"/signin"}/>
         } else {
             return (

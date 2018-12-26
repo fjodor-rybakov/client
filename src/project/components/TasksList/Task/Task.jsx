@@ -125,7 +125,7 @@ class Task extends React.Component {
                 {
                     this.store.data.map((item, index) => {
                         return (
-                            <p>{item.title}</p>
+                            <p key={index}>{item.title}</p>
                         )
                     })
                 }

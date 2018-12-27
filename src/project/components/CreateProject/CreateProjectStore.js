@@ -20,6 +20,7 @@ class CreateProjectStore {
     @observable projectTypes = [];
 
     async createProject(data) {
+        console.log(data);
         const options = {
             method: "POST",
             url: `${localStorage.getItem("serverAddress")}/api/createProject`,

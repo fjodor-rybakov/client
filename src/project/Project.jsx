@@ -32,6 +32,7 @@ class Project extends Component {
     }
 
     successGetData(data) {
+        console.log(data);
         this.store.data = data;
     }
 

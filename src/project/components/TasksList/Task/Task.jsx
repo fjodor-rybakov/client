@@ -123,7 +123,7 @@ class Task extends React.Component {
                         : void 0
                 }
                 {
-                    this.store.data.map((item, index) => {
+                    this.store.data.tracks.map((item, index) => {
                         return (
                             <p key={index}>{item.title}</p>
                         )

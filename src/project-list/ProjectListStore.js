@@ -5,6 +5,7 @@ import {observable} from "mobx";
 class ProjectListStore {
     @observable data = [];
     @observable isRedirect = false;
+    @observable havePermission = false;
 }
 
 export { ProjectListStore }

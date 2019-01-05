@@ -5,6 +5,8 @@ import {observable} from "mobx/lib/mobx";
 class ProjectStore {
     _id = "";
 
+    @observable canCreate = false;
+
     get id() {
         return this._id
     }

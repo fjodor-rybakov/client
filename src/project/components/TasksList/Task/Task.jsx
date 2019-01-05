@@ -36,6 +36,22 @@ class Task extends React.Component {
         rp(task)
             .then(this.setTaskData)
             .catch(console.log);
+
+        const data = {
+            method: 'GET',
+            uri: `${localStorage.getItem("serverAddress")}/api/createTrack/getPermission`,
+            headers: {
+                "x-guide-key": localStorage.getItem("token"),
+                "Cache-Control": "private, max-age=0, no-cache"
+            },
+        };
+        rp(data)
+            .then(res => JSON.parse(res))
+            .then(this.onSuccessGetPermission);
+    }
+
+    onSuccessGetPermission(data) {
+        this.store.canCreate = data;
     }
 
     async addTrack() {
@@ -88,10 +104,10 @@ class Task extends React.Component {
 
     setDefaultValue(data) {
         this.store.data = JSON.parse(data);
-        this.store.id_user = +data.id_user;
+        this.store.id_user = +this.store.data.id_user;
     }
 
-    setTaskData(data){
+    setTaskData(data) {
         this.store.taskData = JSON.parse(data);
         console.log(this.store.taskData);
     }
@@ -112,11 +128,16 @@ class Task extends React.Component {
     }
 
     render() {
+        console.log(this.store.data);
         return (
             <div className={"task container"}>
                 <h4>{this.store.taskData.title}</h4>
                 <p className={"task_description"}>{this.store.taskData.description}</p>
-                <Button text ={"Add Time"} onClick={this.showForm}/>
+                {
+                    this.store.canCreate
+                        ? <Button text={"Add Time"} onClick={this.showForm}/>
+                        : void 0
+                }
                 {
                     this.store.isFormShown
                         ? this.renderForm()
@@ -125,7 +146,7 @@ class Task extends React.Component {
                 {
                     this.store.data.tracks.map((item, index) => {
                         return (
-                            <p key={index}>{item.title}</p>
+                            <p key={index}>{item.description}</p>
                         )
                     })
                 }

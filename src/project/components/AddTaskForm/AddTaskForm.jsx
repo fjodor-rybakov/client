@@ -23,7 +23,6 @@ class AddTaskForm extends Component {
 
     componentWillMount() {
         //todo получать только пользователей назначенных на проект
-
         Utils.getUserListByRole("developer")
             .then((data) => {
                 this.store.developerList = data;
@@ -32,6 +31,10 @@ class AddTaskForm extends Component {
             .then((data) => {
                 this.store.testerList = data;
             });
+        Utils.getCurrentUserInfo()
+            .then((data) =>
+                this.store.id_user = data.id_user
+            )
     }
 
     onSelectDeveloper(selectedOption) {
@@ -59,7 +62,7 @@ class AddTaskForm extends Component {
     onSubmit() {
         const data = {
             id_project: this.store.project_id,
-            id_user_manager: 1,
+            id_user_manager: this.store.id_user,
             description: this.store.description,
             time: +this.store.time,
             title: this.store.title,
@@ -84,12 +87,6 @@ class AddTaskForm extends Component {
 
     onSuccessCreateTask() {
         this.props.onHide();
-    }
-
-    setDefaultValue(data) {
-        // this.store.first_name = data.first_name;
-        // this.store.last_name = data.last_name;
-        this.store.id_user = +data.id_user;
     }
 
     onChangeTitle(event) {
@@ -197,7 +194,6 @@ class AddTaskForm extends Component {
                                     })
                                 }
                             </SimpleSelect>
-                            <div>Project Manager: {this.store.first_name} {this.store.last_name}</div>
                             <button
                                 onClick={this.onSubmit}
                                 type="button"

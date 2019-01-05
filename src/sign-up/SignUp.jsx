@@ -6,13 +6,22 @@ import {autobind} from "core-decorators";
 import {Redirect} from "react-router";
 import * as rp from "request-promise";
 import "./SignUpStyle.scss";
+import {Utils} from "../project/Utils";
 import {Header} from "../header/Header";
+import {SimpleSelect} from "react-selectize";
 
 @observer
 @autobind
 class SignUp extends Component {
     store = new SignUpStore();
     validateRef = React.createRef();
+
+    componentWillMount() {
+        Utils.getRoles()
+            .then(data => {
+                this.store.rolesList = data;
+            })
+    }
 
     constructor(props) {
         super(props);
@@ -36,16 +45,17 @@ class SignUp extends Component {
         if (!this.validateForm(this.store.login, this.store.password, this.store.repeatPassword)) {
             return;
         }
-        this.sendFormData(this.store.login, this.store.password);
+        this.sendFormData(this.store.login, this.store.password, this.store.id_role);
     }
 
-    sendFormData(email, password) {
+    sendFormData(email, password, role) {
         const options = {
             url: "http://localhost:3001/api/signUp",
             method: "POST",
             body: {
                 email: email,
-                password: password
+                password: password,
+                role: role,
             },
             json: true
         };
@@ -74,6 +84,13 @@ class SignUp extends Component {
             return false;
         }
         return true;
+    }
+
+    onSelectRole(selectedOption) {
+        if (!selectedOption) {
+            return;
+        }
+        this.store.id_role = +(selectedOption.value);
     }
 
     render() {
@@ -115,6 +132,11 @@ class SignUp extends Component {
                                     onChange={this.handleChangeRepeatPassword}
                                     placeholder="Repeat Password"/>
                             </div>
+                            <SimpleSelect
+                                placeholder="Select role"
+                                onValueChange={this.onSelectRole}
+                                options={this.store.getOptions()}
+                            />
                             <button type="submit" className="btn">Sign Up</button>
                         </form>
                     </div>

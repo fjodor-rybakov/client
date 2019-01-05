@@ -18,9 +18,10 @@ class CreateProjectStore {
     description = "";
     isPrivate = false;
     @observable projectTypes = [];
+    @observable userRole = "";
+    @observable id_user = 0;
 
-    async createProject(data) {
-        console.log(data);
+    createProject(data) {
         const options = {
             method: "POST",
             url: `${localStorage.getItem("serverAddress")}/api/createProject`,

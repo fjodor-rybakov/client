@@ -29,15 +29,28 @@ class Project extends Component {
             .then(JSON.parse)
             .then(this.successGetData)
             .catch(console.log);
+
+        const req = {
+            method: "GET",
+            url: `${localStorage.getItem("serverAddress")}/api/createTask/getPermission/${this.store.id}`,
+            headers: {
+                "x-guide-key": localStorage.getItem("token"),
+                "Cache-Control": "private, max-age=0, no-cache"
+            },
+        };
+        await rp(req)
+            .then(JSON.parse)
+            .then(this.onSuccessGetPermission)
+            .catch(console.log);
+    }
+
+    onSuccessGetPermission(data) {
+        console.log(data);
+        this.store.canCreate = data.value;
     }
 
     successGetData(data) {
-        console.log(data);
         this.store.data = data;
-    }
-
-    componentDidUpdate() {
-        console.log(this.store.isAddBlockShown)
     }
 
     handleClickOpen() {
@@ -62,7 +75,11 @@ class Project extends Component {
                 <Header title={this.store.data.title}/>
                 <div className={"project"}>
                     <p>{this.store.data.description}</p>
-                    <button onClick={this.handleClickOpen} type="button" className="btn btn-primary">Add task</button>
+                    {
+                        this.store.canCreate
+                            ? <button onClick={this.handleClickOpen} type="button" className="btn btn-primary">Add task</button>
+                            : void 0
+                    }
                     <AddTaskForm
                         project_id={this.store.id}
                         isVisible ={this.store.isAddBlockShown}

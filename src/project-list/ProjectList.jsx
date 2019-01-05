@@ -27,6 +27,22 @@ class ProjectList extends Component {
             .then(res => JSON.parse(res))
             .then(this.successGetDataProjects)
             .catch(this.rejectGetDataProjects);
+
+        const data = {
+            method: 'GET',
+            uri: `${localStorage.getItem("serverAddress")}/api/createProject/getPermission`,
+            headers: {
+                "x-guide-key": localStorage.getItem("token"),
+                "Cache-Control": "private, max-age=0, no-cache"
+            },
+        };
+        rp(data)
+            .then(res => JSON.parse(res))
+            .then(this.onSuccessGetPermission);
+    }
+
+    onSuccessGetPermission(data) {
+        this.store.havePermission = data;
     }
 
     successGetDataProjects(data) {
@@ -58,7 +74,11 @@ class ProjectList extends Component {
                                 )
                             }
                         )}
-                        <Link to={"createProject"} className="btn">CREATE PROJECT</Link>
+                        {
+                            this.store.havePermission
+                                ? <Link to={"createProject"} className="btn">CREATE PROJECT</Link>
+                                : void 0
+                        }
                     </div>
                 </>
             );

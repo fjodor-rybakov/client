@@ -24,7 +24,7 @@ class CreateProject extends React.Component {
             .then((data) => {
                 this.store.developersList = data;
             });
-        Utils.getUserListByRole("project manger")
+        Utils.getUserListByRole("project manager")
             .then((data) => {
                 this.store.pm_list = data;
                 console.log(data);
@@ -41,6 +41,21 @@ class CreateProject extends React.Component {
             .then((data) => {
                 this.store.projectTypes = data;
             });
+        Utils.getCurrentUserInfo()
+            .then((data) => {
+                console.log(data);
+                this.store.userRole = data.role;
+                this.store.id_user = data.id_user;
+                this.setData();
+            });
+    }
+
+    setData() {
+        if (this.store.role === 'client') {
+            this.store.client= {id_user: this.store.id_user}
+        } else {
+            this.store.project_manager = {id_user: this.store.id_user}
+        }
     }
 
 
@@ -53,19 +68,24 @@ class CreateProject extends React.Component {
                         this.store.error !== "" &&
                         <div className={"alert alert-danger"} role={"alert"}>{this.store.error}</div>
                     }
-                    <input className={"input-field"} placeholder={"title"} onChange={this.onChangeTitle} maxLength={30}/>
+                    <input className={"input-field"} placeholder={"title"} onChange={this.onChangeTitle}
+                           maxLength={30}/>
                     <textarea className={"input-field"} placeholder={"description"}
                               onChange={this.onChangeDescription} maxLength={140}/>
-                    <SimpleSelect
-                        options={this.getOptions(this.store.clientsList)}
-                        placeholder="Select client"
-                        onValueChange={this.onSelectClient}
-                    />
-                    <SimpleSelect
-                        placeholder="Select project manager"
-                        onValueChange={this.onSelectPM}
-                        options={this.getOptions(this.store.pm_list)}
-                    />
+                    {
+                        this.store.userRole === "client"
+                            ? <SimpleSelect
+                                placeholder="Select project manager"
+                                onValueChange={this.onSelectPM}
+                                options={this.getOptions(this.store.pm_list)}
+                            />
+                            : <SimpleSelect
+                                options={this.getOptions(this.store.clientsList)}
+                                placeholder="Select client"
+                                onValueChange={this.onSelectClient}
+                            />
+
+                    }
                     <SimpleSelect
                         placeholder="Select developers"
                         onValueChange={this.onSelectDeveloper}
@@ -96,7 +116,7 @@ class CreateProject extends React.Component {
         this.store.project_type = this.store.projectTypes[index].id_project_type;
     }
 
-    onSubmit() {
+    async onSubmit() {
         const data = {
             id_user_manager: this.store.project_manager.id_user,
             description: this.store.description,

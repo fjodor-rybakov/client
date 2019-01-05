@@ -32,7 +32,6 @@ class TasksList extends React.Component {
     }
 
     render() {
-        console.log(this.store.data);
         return (
             <>
                 {

@@ -2,7 +2,7 @@
   .card {
     border: 1px solid lightgrey;
     border-radius: 4px;
-    height: 80px;
+    height: 122px;
     margin-bottom: 10px;
     margin-top: 10px;
     width: 300px;
@@ -16,5 +16,11 @@
 
   &__header {
     text-overflow: ellipsis;
+  }
+
+  &-button {
+    &__update, &__delete {
+      display: inline-block;
+    }
   }
 }

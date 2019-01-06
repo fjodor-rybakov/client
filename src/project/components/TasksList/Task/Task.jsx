@@ -11,7 +11,7 @@ import {Button} from "../../../../button/Button";
 class Task extends React.Component {
     store = new TaskStore();
 
-    async componentWillMount() {
+    componentWillMount() {
         this.store.id = window.location.pathname.split('/')[3];
         const options = {
             method: "GET",
@@ -73,7 +73,7 @@ class Task extends React.Component {
             },
             json: true
         };
-        rp(options)
+        await rp(options)
             .then(console.log)
             .catch(console.log);
     }

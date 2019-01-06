@@ -13,23 +13,23 @@ import {HomePageStore} from "./HomePageStore";
 class HomePage extends Component {
     store = new HomePageStore();
 
-    async componentWillMount() {
+    componentWillMount() {
         const req = {
             method: "GET",
             url: `${localStorage.getItem("serverAddress")}/api/project/getMostPopular`,
             headers: {
-                "x-guide-key": localStorage.getItem("token"),
                 "Cache-Control": "private, max-age=0, no-cache"
             },
         };
-        await rp(req)
+        rp(req)
             .then(JSON.parse)
             .then(this.onSuccess)
             .catch(console.log);
     }
 
     onSuccess(data) {
-        this.store.data = data.data;
+        console.log(data);
+        this.store.data = data;
     }
 
     render() {

@@ -54,7 +54,7 @@
   .popular {
     &__item {
       display: flex;
-      width: min-content;
+      width: max-content;
       margin: 0 auto;
     }
     &__header {

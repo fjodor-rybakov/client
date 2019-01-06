@@ -69,6 +69,22 @@ class Project extends Component {
         this.store.isAddBlockShown = false;
     }
 
+    async deleteProject() {
+        this.store.id = window.location.pathname.split('/')[2];
+        const options = {
+            method: "DELETE",
+            url: `${localStorage.getItem("serverAddress")}/api/project/${this.store.id}`,
+            headers: {
+                "x-guide-key": localStorage.getItem("token"),
+                "Cache-Control": "private, max-age=0, no-cache"
+            },
+        };
+        await rp(options)
+            .then(JSON.parse)
+            .then(console.log)
+            .catch(console.log);
+    }
+
     render() {
         return (
             <>
@@ -91,6 +107,7 @@ class Project extends Component {
                         idProject={this.store.id}
                         onClose={this.onHide}
                     />
+                    <button onClick={this.deleteProject} type="button" className="btn btn-danger">Delete Project</button>
                 </div>
             </>
         );

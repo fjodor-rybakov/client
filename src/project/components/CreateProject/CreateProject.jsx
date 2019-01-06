@@ -46,15 +46,15 @@ class CreateProject extends React.Component {
                 console.log(data);
                 this.store.userRole = data.role;
                 this.store.id_user = data.id_user;
-                this.setData();
+                this.setData(data);
             });
     }
 
-    setData() {
-        if (this.store.role === 'client') {
-            this.store.client= {id_user: this.store.id_user}
+    setData(data) {
+        if (data.role === "client") {
+            this.store.client = {id_user: data.id_user}
         } else {
-            this.store.project_manager = {id_user: this.store.id_user}
+            this.store.project_manager = {id_user: data.id_user}
         }
     }
 
@@ -117,6 +117,7 @@ class CreateProject extends React.Component {
     }
 
     async onSubmit() {
+        console.log(this.store.client);
         const data = {
             id_user_manager: this.store.project_manager.id_user,
             description: this.store.description,
@@ -126,7 +127,7 @@ class CreateProject extends React.Component {
             id_project_type: this.store.project_type,
             is_private: this.store.isPrivate,
         };
-        if (!this.verifyData(data)) {
+        if (!this.isCorrectData(data)) {
             this.store.error = "Все поля должны быть корректно заполнены";
             return;
         }
@@ -136,10 +137,10 @@ class CreateProject extends React.Component {
             .catch(this.onError);
     }
 
-    verifyData(data) {
-        return !(!data.id_user_manager || !data.description || !data.description || !data.title
-            || data.developers.length === 0 || !data.id_user_client || !data.id_project_type)
-
+    isCorrectData(data) {
+        console.log(data);
+        return (data.id_user_manager && data.description && data.title
+            && data.developers.length !== 0 && data.id_user_client && data.id_project_type)
     }
 
     onError() {

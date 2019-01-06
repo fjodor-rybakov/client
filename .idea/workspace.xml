@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec09f3bb-ddbe-4ed5-baf9-153ab1692745" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Profile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -29,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="41" column="88" selection-start-line="41" selection-start-column="75" selection-end-line="41" selection-end-column="88" />
+            <state relative-caret-position="122">
+              <caret line="41" column="76" selection-start-line="41" selection-start-column="76" selection-end-line="41" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -312,12 +310,12 @@
       <workItem from="1546594102054" duration="903000" />
       <workItem from="1546684681907" duration="14166000" />
       <workItem from="1546766351343" duration="8601000" />
-      <workItem from="1546787549961" duration="2895000" />
+      <workItem from="1546787549961" duration="3508000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124400000" />
+    <option name="totallyTimeSpent" value="125013000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -694,8 +692,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="41" column="88" selection-start-line="41" selection-start-column="75" selection-end-line="41" selection-end-column="88" />
+        <state relative-caret-position="122">
+          <caret line="41" column="76" selection-start-line="41" selection-start-column="76" selection-end-line="41" selection-end-column="76" />
         </state>
       </provider>
     </entry>

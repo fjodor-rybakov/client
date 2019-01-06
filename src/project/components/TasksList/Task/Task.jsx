@@ -11,7 +11,7 @@ import {Button} from "../../../../button/Button";
 class Task extends React.Component {
     store = new TaskStore();
 
-    async componentWillMount() {
+    componentWillMount() {
         this.store.id = window.location.pathname.split('/')[3];
         const options = {
             method: "GET",
@@ -39,7 +39,7 @@ class Task extends React.Component {
 
         const data = {
             method: 'GET',
-            uri: `${localStorage.getItem("serverAddress")}/api/createTrack/getPermission`,
+            uri: `${localStorage.getItem("serverAddress")}/api/createProject/getPermission`,
             headers: {
                 "x-guide-key": localStorage.getItem("token"),
                 "Cache-Control": "private, max-age=0, no-cache"
@@ -73,7 +73,7 @@ class Task extends React.Component {
             },
             json: true
         };
-        rp(options)
+        await rp(options)
             .then(console.log)
             .catch(console.log);
     }

@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec09f3bb-ddbe-4ed5-baf9-153ab1692745" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/Project.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Project.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,17 +18,47 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/profile/Profile.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+            <state relative-caret-position="136">
+              <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="122">
+              <caret line="41" column="76" selection-start-line="41" selection-start-column="76" selection-end-line="41" selection-end-column="76" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/Project.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="113" column="5" lean-forward="true" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
+            <state relative-caret-position="238">
+              <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/components/CreateProject/CreateProject.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1921">
+              <caret line="18" column="10" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2074">
+              <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,10 +123,8 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/project/components/TasksList/TasksList.scss" />
         <option value="$PROJECT_DIR$/src/project/components/TasksList/Task/Task.scss" />
-        <option value="$PROJECT_DIR$/src/profile/Profile.jsx" />
         <option value="$PROJECT_DIR$/src/project-list/ProjectListStore.js" />
         <option value="$PROJECT_DIR$/src/project/components/TasksList/Task/TaskStore.js" />
-        <option value="$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx" />
         <option value="$PROJECT_DIR$/src/project/components/TasksList/TasksList.jsx" />
         <option value="$PROJECT_DIR$/src/project/ProjectStore.js" />
         <option value="$PROJECT_DIR$/src/project/components/CreateProject/CreateProjectStore.js" />
@@ -108,6 +135,8 @@
         <option value="$PROJECT_DIR$/src/sign-up/SignUp.jsx" />
         <option value="$PROJECT_DIR$/src/project/components/CreateProject/CreateProject.jsx" />
         <option value="$PROJECT_DIR$/src/project/Project.jsx" />
+        <option value="$PROJECT_DIR$/src/profile/Profile.jsx" />
+        <option value="$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx" />
       </list>
     </option>
   </component>
@@ -115,7 +144,7 @@
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="28" />
     <option name="width" value="1346" />
     <option name="height" value="688" />
@@ -163,7 +192,32 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="project" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="AddTaskForm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client-order-task" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client-order-task" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="CreateProject" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client-order-task" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client-order-task" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="TasksList" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client-order-task" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client-order-task" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="TasksList" type="462c0819:PsiDirectoryNode" />
+              <item name="Task" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -175,7 +229,7 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="th&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test-server" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -255,12 +309,13 @@
       <workItem from="1546593944853" duration="26000" />
       <workItem from="1546594102054" duration="903000" />
       <workItem from="1546684681907" duration="14166000" />
-      <workItem from="1546766351343" duration="8271000" />
+      <workItem from="1546766351343" duration="8601000" />
+      <workItem from="1546787549961" duration="3508000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121175000" />
+    <option name="totallyTimeSpent" value="125013000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -559,13 +614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1197">
-          <caret line="66" column="42" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/react-selectize/src/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -597,16 +645,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/Utils.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -621,24 +659,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/Project.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/components/CreateProject/CreateProject.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="-1921">
           <caret line="18" column="10" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2074">
+          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/profile/Profile.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+        <state relative-caret-position="136">
+          <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/Project.jsx">
+    <entry file="file://$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="113" column="5" lean-forward="true" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="5" />
+        <state relative-caret-position="122">
+          <caret line="41" column="76" selection-start-line="41" selection-start-column="76" selection-end-line="41" selection-end-column="76" />
         </state>
       </provider>
     </entry>

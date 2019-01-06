@@ -16,14 +16,14 @@ class Profile extends Component {
 
     async componentDidMount() {
         const options = {
-            method: 'GET',
+            method: "GET",
             uri: `${localStorage.getItem("serverAddress")}/api/profile`,
             headers: {
                 "x-guide-key": localStorage.getItem("token"),
                 "Cache-Control": "private, max-age=0, no-cache"
             },
         };
-        rp(options)
+        await rp(options)
             .then(res => JSON.parse(res))
             .then(this.setDefaultValue)
             .catch(this.errorGetDataProfile);

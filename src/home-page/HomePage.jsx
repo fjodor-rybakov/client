@@ -5,10 +5,33 @@ import "./HomePageStyle.scss";
 import {observer} from "mobx-react";
 import {autobind} from "core-decorators";
 import {Header} from "../header/Header";
+import * as rp from "request-promise";
+import {HomePageStore} from "./HomePageStore";
 
 @observer
 @autobind
 class HomePage extends Component {
+    store = new HomePageStore();
+
+    async componentWillMount() {
+        const req = {
+            method: "GET",
+            url: `${localStorage.getItem("serverAddress")}/api/project/getMostPopular`,
+            headers: {
+                "x-guide-key": localStorage.getItem("token"),
+                "Cache-Control": "private, max-age=0, no-cache"
+            },
+        };
+        await rp(req)
+            .then(JSON.parse)
+            .then(this.onSuccess)
+            .catch(console.log);
+    }
+
+    onSuccess(data) {
+        this.store.data = data.data;
+    }
+
     render() {
         return (
             <div className={"home-page"}>
@@ -19,6 +42,12 @@ class HomePage extends Component {
                 <p className={"button-order"}>
                     <Link className={"btn"} id={"create-project"} to={"/projectList"}>View Projects</Link>
                 </p>
+                <div className={"popular"}>
+                    <h4 className={"popular__header"}>The most popular projects</h4>
+                    {this.store.data.map((project, index) =>
+                        <Link to={`/project/${project.id_project}`} key={index} className={"popular__item"}>{project.title}</Link>
+                    )}
+                </div>
             </div>
         );
     }

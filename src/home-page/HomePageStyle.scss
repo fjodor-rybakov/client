@@ -1,53 +1,64 @@
 * {
-    margin: 0;
-    padding: 0;
-    outline: none;
-    text-decoration: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
 }
 
 .home-page {
 
-    #signin {
-        margin-left: 50px;
-        margin-top: 30px;
-    }
+  #signin {
+    margin-left: 50px;
+    margin-top: 30px;
+  }
 
-    #signup {
-        margin-left: 20px;
-        margin-top: 30px;
-    }
+  #signup {
+    margin-left: 20px;
+    margin-top: 30px;
+  }
 
-    #profile-button {
-        margin-left: 50px;
-        margin-top: 30px;
-    }
+  #profile-button {
+    margin-left: 50px;
+    margin-top: 30px;
+  }
 
-    .about-us {
-        width: 100%;
-        height: 100px;
-    }
+  .about-us {
+    width: 100%;
+    height: 100px;
+  }
 
-    .about-us p {
-        text-align: center;
-        margin: auto;
-        width: 450px;
-        height: 300px;
-    }
+  .about-us p {
+    text-align: center;
+    margin: auto;
+    width: 450px;
+    height: 300px;
+  }
 
-    .button-order {
-        width: 100%;
-        height: 100px;
-    }
+  .button-order {
+    width: 100%;
+    height: 100px;
+  }
 
-    .button-order {
-        text-align: center;
-    }
+  .button-order {
+    text-align: center;
+  }
 
-    .form {
-        margin-bottom: 20px;
-    }
+  .form {
+    margin-bottom: 20px;
+  }
 
-    .switch-authorization {
-        margin-bottom: 10px;
+  .switch-authorization {
+    margin-bottom: 10px;
+  }
+
+  .popular {
+    &__item {
+      display: flex;
+      width: min-content;
+      margin: 0 auto;
     }
+    &__header {
+      text-align: center;
+    }
+  }
 }

@@ -81,7 +81,7 @@ class Project extends Component {
         };
         await rp(options)
             .then(JSON.parse)
-            .then(console.log)
+            .then(window.location.replace("/projectList"))
             .catch(console.log);
     }
 

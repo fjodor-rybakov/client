@@ -2,9 +2,18 @@ import * as rp from "request-promise";
 
 class Utils {
     static async getUserListByRole(role) {
-        const options = {method: "POST", body: JSON.stringify({role: role})};
-        return await fetch(`${localStorage.getItem("serverAddress")}/api/getUserListByRole`, options)
-            .then(res => res.json())
+        console.log(role);
+        const options = {
+            method: "POST",
+            url: `${localStorage.getItem("serverAddress")}/api/getUserListByRole`,
+            headers: {
+                "x-guide-key": localStorage.getItem("token"),
+                "Cache-Control": "private, max-age=0, no-cache"
+            },
+            body: role,
+            json: true
+        };
+        return await rp(options);
     }
 
     static async getRoles() {
@@ -53,10 +62,11 @@ class Utils {
             },
         };
         await rp(options)
-            .then(res => JSON.parse(res))
+            .then(JSON.parse)
             .then(data => res = data)
             .catch(console.log);
-        return res.data;
+        console.log(res);
+        return res;
     }
 }
 

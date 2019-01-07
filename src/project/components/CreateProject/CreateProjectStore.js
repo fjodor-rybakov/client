@@ -29,7 +29,7 @@ class CreateProjectStore {
                 "x-guide-key": localStorage.getItem("token"),
                 "Cache-Control": "private, max-age=0, no-cache"
             },
-            body: {data: data},
+            body: data,
             json: true
         };
         return rp(options);

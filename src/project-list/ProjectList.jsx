@@ -16,8 +16,8 @@ class ProjectList extends Component {
 
     async componentDidMount() {
         const options = {
-            method: 'GET',
-            uri: `${localStorage.getItem("serverAddress")}/api/projectList`,
+            method: "GET",
+            uri: `${localStorage.getItem("serverAddress")}/api/projects`,
             headers: {
                 "x-guide-key": localStorage.getItem("token"),
                 "Cache-Control": "private, max-age=0, no-cache"
@@ -29,8 +29,8 @@ class ProjectList extends Component {
             .catch(this.rejectGetDataProjects);
 
         const data = {
-            method: 'GET',
-            uri: `${localStorage.getItem("serverAddress")}/api/createProject/getPermission`,
+            method: "GET",
+            uri: `${localStorage.getItem("serverAddress")}/api/project/permission`,
             headers: {
                 "x-guide-key": localStorage.getItem("token"),
                 "Cache-Control": "private, max-age=0, no-cache"

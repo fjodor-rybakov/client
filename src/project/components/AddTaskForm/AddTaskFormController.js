@@ -7,7 +7,7 @@ class AddTaskFormController extends Component {
     async addTask(data) {
         const options = {
             method: "POST",
-            url: `${localStorage.getItem("serverAddress")}/api/createTask`,
+            url: `${localStorage.getItem("serverAddress")}/api/task`,
             headers: {
                 "x-guide-key": localStorage.getItem("token"),
                 "Cache-Control": "private, max-age=0, no-cache"

@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec09f3bb-ddbe-4ed5-baf9-153ab1692745" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/home-page/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/home-page/HomePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project-list/ProjectList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/project-list/ProjectList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/Utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskFormController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskFormController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/components/CreateProject/CreateProjectStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/components/CreateProject/CreateProjectStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/components/TasksList/TasksList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/components/TasksList/TasksList.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,20 +24,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/home-page/HomePage.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/home-page/HomePageStore.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="112">
+              <caret line="18" column="78" selection-start-line="18" selection-start-column="71" selection-end-line="18" selection-end-column="78" />
             </state>
           </provider>
         </entry>
@@ -39,26 +33,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/components/TasksList/TasksList.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+            <state relative-caret-position="214">
+              <caret line="27" column="19" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/project/Project.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="34" column="63" selection-start-line="34" selection-start-column="63" selection-end-line="34" selection-end-column="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/components/TasksList/TasksList.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+            <state relative-caret-position="105">
+              <caret line="34" column="87" selection-start-line="34" selection-start-column="74" selection-end-line="34" selection-end-column="87" />
             </state>
           </provider>
         </entry>
@@ -66,17 +51,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/components/CreateProject/CreateProject.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2159">
+            <state relative-caret-position="224">
               <caret line="135" column="36" selection-start-line="135" selection-start-column="36" selection-end-line="135" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/Utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="139">
+              <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project-list/ProjectList.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="281">
+              <caret line="41" column="72" selection-start-line="41" selection-start-column="72" selection-end-line="41" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -84,8 +87,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskFormController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+            <state relative-caret-position="105">
+              <caret line="9" column="67" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -93,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/components/CreateProject/CreateProjectStore.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+            <state relative-caret-position="230">
+              <caret line="26" column="70" selection-start-line="26" selection-start-column="70" selection-end-line="26" selection-end-column="70" />
             </state>
           </provider>
         </entry>
@@ -115,7 +118,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tasksList</find>
       <find>JSON</find>
       <find>team</find>
       <find>header</find>
@@ -130,10 +132,20 @@
       <find>clientsList</find>
       <find>client</find>
       <find>role</find>
+      <find>getInfo</find>
+      <find>getRoles</find>
+      <find>getUserListByRole</find>
+      <find>projectList</find>
+      <find>createProject</find>
       <find>getMostPopular</find>
       <find>getProjectTypes</find>
-      <find>getUserListByRole</find>
+      <find>tasksList</find>
       <find>createTask</find>
+      <find>tracks</find>
+      <find>createProject/getPermission</find>
+      <find>/api/createProject/getPermission</find>
+      <find>createTrack/getPermission</find>
+      <find>getPermission</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -173,21 +185,21 @@
         <option value="$PROJECT_DIR$/src/project-list/ProjectListStore.js" />
         <option value="$PROJECT_DIR$/src/project/components/TasksList/Task/TaskStore.js" />
         <option value="$PROJECT_DIR$/src/project/ProjectStore.js" />
-        <option value="$PROJECT_DIR$/src/project-list/ProjectList.jsx" />
         <option value="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.jsx" />
         <option value="$PROJECT_DIR$/src/sign-up/SignUpStore.js" />
         <option value="$PROJECT_DIR$/src/sign-up/SignUp.jsx" />
         <option value="$PROJECT_DIR$/src/project/components/CreateProject/CreateProject.jsx" />
         <option value="$PROJECT_DIR$/src/project/Project.jsx" />
         <option value="$PROJECT_DIR$/src/profile/Profile.jsx" />
-        <option value="$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx" />
         <option value="$PROJECT_DIR$/src/project/components/TasksList/TasksList.scss" />
-        <option value="$PROJECT_DIR$/src/project/components/TasksList/TasksList.jsx" />
-        <option value="$PROJECT_DIR$/src/home-page/HomePage.jsx" />
         <option value="$PROJECT_DIR$/src/home-page/HomePageStyle.scss" />
         <option value="$PROJECT_DIR$/src/project/components/CreateProject/CreateProjectStore.js" />
+        <option value="$PROJECT_DIR$/src/home-page/HomePage.jsx" />
         <option value="$PROJECT_DIR$/src/project/Utils.js" />
+        <option value="$PROJECT_DIR$/src/project/components/TasksList/TasksList.jsx" />
+        <option value="$PROJECT_DIR$/src/project-list/ProjectList.jsx" />
         <option value="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskFormController.js" />
+        <option value="$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx" />
       </list>
     </option>
   </component>
@@ -370,23 +382,24 @@
       <workItem from="1546787549961" duration="10617000" />
       <workItem from="1546817905863" duration="1219000" />
       <workItem from="1546849981142" duration="6781000" />
-      <workItem from="1546879048201" duration="881000" />
+      <workItem from="1546879048201" duration="2021000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141003000" />
+    <option name="totallyTimeSpent" value="142143000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4940978" visible="true" weight="0.19494048" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4940978" visible="true" weight="0.19494048" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.5059022" side_tool="true" weight="0.25725028" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32879046" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49570355" visible="true" weight="0.38265306" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49570355" visible="true" weight="0.38265306" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -599,7 +612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -607,13 +619,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1">
           <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project-list/ProjectList.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="48" column="31" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -658,24 +663,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="67" column="48" selection-start-line="67" selection-start-column="39" selection-end-line="67" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/home-page/HomePageStyle.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
           <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/home-page/HomePage.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -689,45 +680,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/components/TasksList/TasksList.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/Project.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="34" column="63" selection-start-line="34" selection-start-column="63" selection-end-line="34" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/components/TasksList/TasksList.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/components/CreateProject/CreateProject.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2159">
-          <caret line="135" column="36" selection-start-line="135" selection-start-column="36" selection-end-line="135" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskFormController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/components/CreateProject/CreateProjectStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -741,10 +697,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/Utils.js">
+    <entry file="file://$PROJECT_DIR$/src/project/components/CreateProject/CreateProjectStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="26" column="70" selection-start-line="26" selection-start-column="70" selection-end-line="26" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/home-page/HomePage.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="18" column="78" selection-start-line="18" selection-start-column="71" selection-end-line="18" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/components/CreateProject/CreateProject.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="135" column="36" selection-start-line="135" selection-start-column="36" selection-end-line="135" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/components/TasksList/TasksList.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="27" column="19" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskFormController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <caret line="9" column="67" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="41" column="72" selection-start-line="41" selection-start-column="72" selection-end-line="41" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project-list/ProjectList.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/Utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/Project.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="34" column="87" selection-start-line="34" selection-start-column="74" selection-end-line="34" selection-end-column="87" />
         </state>
       </provider>
     </entry>

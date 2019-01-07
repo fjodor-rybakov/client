@@ -24,7 +24,7 @@ class CreateProjectStore {
     createProject(data) {
         const options = {
             method: "POST",
-            url: `${localStorage.getItem("serverAddress")}/api/createProject`,
+            url: `${localStorage.getItem("serverAddress")}/api/project`,
             headers: {
                 "x-guide-key": localStorage.getItem("token"),
                 "Cache-Control": "private, max-age=0, no-cache"

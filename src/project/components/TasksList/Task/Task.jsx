@@ -15,7 +15,7 @@ class Task extends React.Component {
         this.store.id = window.location.pathname.split('/')[3];
         const options = {
             method: "GET",
-            url: `${localStorage.getItem("serverAddress")}/api/tracks/${this.store.id}`,
+            url: `${localStorage.getItem("serverAddress")}/api/track/${this.store.id}`,
             headers: {
                 "x-guide-key": localStorage.getItem("token"),
                 "Cache-Control": "private, max-age=0, no-cache"
@@ -39,7 +39,7 @@ class Task extends React.Component {
 
         const data = {
             method: 'GET',
-            uri: `${localStorage.getItem("serverAddress")}/api/createProject/getPermission`,
+            uri: `${localStorage.getItem("serverAddress")}/api/project/permission`,
             headers: {
                 "x-guide-key": localStorage.getItem("token"),
                 "Cache-Control": "private, max-age=0, no-cache"

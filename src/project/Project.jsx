@@ -32,7 +32,7 @@ class Project extends Component {
 
         const req = {
             method: "GET",
-            url: `${localStorage.getItem("serverAddress")}/api/createTask/getPermission/${this.store.id}`,
+            url: `${localStorage.getItem("serverAddress")}/api/task/permission/${this.store.id}`,
             headers: {
                 "x-guide-key": localStorage.getItem("token"),
                 "Cache-Control": "private, max-age=0, no-cache"

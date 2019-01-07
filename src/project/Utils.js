@@ -5,7 +5,7 @@ class Utils {
         console.log(role);
         const options = {
             method: "POST",
-            url: `${localStorage.getItem("serverAddress")}/api/getUserListByRole`,
+            url: `${localStorage.getItem("serverAddress")}/api/usersByRole`,
             headers: {
                 "x-guide-key": localStorage.getItem("token"),
                 "Cache-Control": "private, max-age=0, no-cache"
@@ -20,7 +20,7 @@ class Utils {
         let res = {};
         const options = {
             method: "GET",
-            url: `${localStorage.getItem("serverAddress")}/api/getRoles`,
+            url: `${localStorage.getItem("serverAddress")}/api/roles`,
             headers: {
                 "x-guide-key": localStorage.getItem("token"),
                 "Cache-Control": "private, max-age=0, no-cache"
@@ -38,7 +38,7 @@ class Utils {
         let res = {};
         const options = {
             method: "GET",
-            url: `${localStorage.getItem("serverAddress")}/api/getInfo`,
+            url: `${localStorage.getItem("serverAddress")}/api/role`,
             headers: {
                 "x-guide-key": localStorage.getItem("token"),
                 "Cache-Control": "private, max-age=0, no-cache"
@@ -55,7 +55,7 @@ class Utils {
         let res = {};
         const options = {
             method: "GET",
-            url: `${localStorage.getItem("serverAddress")}/api/getProjectTypes`,
+            url: `${localStorage.getItem("serverAddress")}/api/projectTypes`,
             headers: {
                 "x-guide-key": localStorage.getItem("token"),
                 "Cache-Control": "private, max-age=0, no-cache"

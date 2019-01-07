@@ -16,7 +16,7 @@ class HomePage extends Component {
     componentWillMount() {
         const req = {
             method: "GET",
-            url: `${localStorage.getItem("serverAddress")}/api/project/getMostPopular`,
+            url: `${localStorage.getItem("serverAddress")}/api/project/popular`,
             headers: {
                 "Cache-Control": "private, max-age=0, no-cache"
             },

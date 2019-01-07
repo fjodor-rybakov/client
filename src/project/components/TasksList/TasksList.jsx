@@ -19,7 +19,7 @@ class TasksList extends React.Component {
     componentWillMount() {
         const options = {
             method: "GET",
-            url: `${localStorage.getItem("serverAddress")}/api/tasksList/${this.store.idProject}`,
+            url: `${localStorage.getItem("serverAddress")}/api/tasks/${this.store.idProject}`,
             headers: {
                 "x-guide-key": localStorage.getItem("token"),
                 "Cache-Control": "private, max-age=0, no-cache"

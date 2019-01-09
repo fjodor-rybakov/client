@@ -50,7 +50,6 @@ class Project extends Component {
     }
 
     successGetData(data) {
-        console.log("DATAAAAAAAAA", data);
         this.store.data = data.data;
         this.store.dev = data.developers;
         this.store.testers = data.testers;
@@ -88,7 +87,6 @@ class Project extends Component {
     }
 
     render() {
-        console.log("RENDERRRRRRRRRRRR");
         return (
             <>
                 <Header title={this.store.data.title}/>

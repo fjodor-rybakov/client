@@ -8,6 +8,7 @@ import {TasksList} from "./components/TasksList/TasksList.jsx";
 import * as rp from "request-promise";
 import {Header} from "../header/Header";
 import "./Project.scss";
+import {CreateProject} from "./components/CreateProject/CreateProject";
 
 @autobind
 @observer
@@ -45,12 +46,13 @@ class Project extends Component {
     }
 
     onSuccessGetPermission(data) {
-        console.log(data);
         this.store.canCreate = data.value;
     }
 
     successGetData(data) {
-        this.store.data = data;
+        this.store.data = data.data;
+        this.store.dev = data.developers;
+        this.store.testers = data.testers;
     }
 
     handleClickOpen() {
@@ -108,6 +110,14 @@ class Project extends Component {
                         onClose={this.onHide}
                     />
                     <button onClick={this.deleteProject} type="button" className="btn btn-danger">Delete Project</button>
+                    <div>
+                        <CreateProject
+                            edit={true}
+                            data={this.store.data}
+                            testers={this.store.testers}
+                            dev={this.store.dev}
+                        />
+                    </div>
                 </div>
             </>
         );

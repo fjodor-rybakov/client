@@ -2,7 +2,6 @@ import * as rp from "request-promise";
 
 class Utils {
     static async getUserListByRole(role) {
-        console.log(role);
         const options = {
             method: "POST",
             url: `${localStorage.getItem("serverAddress")}/api/usersByRole`,
@@ -65,7 +64,6 @@ class Utils {
             .then(JSON.parse)
             .then(data => res = data)
             .catch(console.log);
-        console.log(res);
         return res;
     }
 }

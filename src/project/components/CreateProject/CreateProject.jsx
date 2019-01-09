@@ -3,13 +3,13 @@ import {SimpleSelect} from "react-selectize";
 import {CreateProjectStore} from "./CreateProjectStore";
 import {Utils} from "../../Utils";
 import {autobind} from "core-decorators";
-import {observer} from "mobx-react/index";
+import {observer} from "mobx-react";
 import {Header} from "../../../header/Header";
 import "./CreateProject.scss";
 import {Button} from "../../../button/Button";
 
-@observer
 @autobind
+@observer
 class CreateProject extends React.Component {
     store = new CreateProjectStore();
 
@@ -27,7 +27,6 @@ class CreateProject extends React.Component {
         Utils.getUserListByRole("project manager")
             .then((data) => {
                 this.store.pm_list = data;
-                console.log(data);
             });
         Utils.getUserListByRole("tester")
             .then((data) => {
@@ -43,7 +42,6 @@ class CreateProject extends React.Component {
             });
         Utils.getCurrentUserInfo()
             .then((data) => {
-                console.log(data);
                 this.store.userRole = data.role;
                 this.store.id_user = data.id_user;
                 this.setData(data);
@@ -51,27 +49,53 @@ class CreateProject extends React.Component {
     }
 
     setData(data) {
-        if (data.role === "client") {
-            this.store.client = {id_user: data.id_user}
+        console.log(this.props.data);
+        if (this.props.edit) {
+            this.store.id = this.props.data.id_project;
+            this.store.client = {id_user: this.props.data.id_user_client};
+            this.store.project_manager = {id_user: this.props.data.id_project_manager};
+            this.store.description = this.props.data.description;
+            this.store.title = this.props.data.title;
+            this.store.selectedDeveloper = this.props.dev;
+            this.store.selectedTesters = this.props.testers;
+            this.store.isPrivate = this.props.data.is_private;
+            this.store.project_type = this.props.data.id_project_type;
         } else {
-            this.store.project_manager = {id_user: data.id_user}
+            if (data.role === "client") {
+                this.store.client = {id_user: data.id_user}
+            } else {
+                this.store.project_manager = {id_user: data.id_user}
+            }
         }
     }
 
+    removeDeveloper(index) {
+        if (index === undefined) {
+            return;
+        }
+        this.store.selectedDeveloper.splice(index, 1);
+    }
+
+    removeTester(index) {
+        if (index === undefined) {
+            return;
+        }
+        this.store.selectedTesters.splice(index, 1);
+    }
 
     render() {
         return (
             <>
-                <Header title={"create project"}/>
+                {!this.props.edit ? <Header title={"create project"}/> : void 0}
                 <div className={"create-project container"}>
                     {
                         this.store.error !== "" &&
                         <div className={"alert alert-danger"} role={"alert"}>{this.store.error}</div>
                     }
                     <input className={"input-field"} placeholder={"title"} onChange={this.onChangeTitle}
-                           maxLength={30}/>
+                           maxLength={30} value={this.store.title}/>
                     <textarea className={"input-field"} placeholder={"description"}
-                              onChange={this.onChangeDescription} maxLength={140}/>
+                              onChange={this.onChangeDescription} maxLength={140} value={this.store.description}/>
                     {
                         this.store.userRole === "client"
                             ? <SimpleSelect
@@ -86,11 +110,29 @@ class CreateProject extends React.Component {
                             />
 
                     }
+                    <p>Developer:</p>
+                    {this.store.selectedDeveloper.map((data, index) => {
+                        return (
+                            <div key={index} className={"selected-container"}>
+                                <span>{data.first_name} {data.last_name}</span>
+                                <div className={"close-icon"} onClick={() => this.removeDeveloper(index)}/>
+                            </div>
+                        )
+                    })}
                     <SimpleSelect
                         placeholder="Select developers"
                         onValueChange={this.onSelectDeveloper}
                         options={this.getOptions(this.store.developersList)}
                     />
+                    <p>Tester:</p>
+                    {this.store.selectedTesters.map((data, index) => {
+                        return (
+                            <div key={index} className={"selected-container"}>
+                                <div>{data.first_name} {data.last_name}</div>
+                                <div className={"close-icon"} onClick={() => this.removeTester(index)}/>
+                            </div>
+                        )
+                    })}
                     <SimpleSelect
                         placeholder="Select testers"
                         onValueChange={this.onSelectTester}
@@ -117,7 +159,6 @@ class CreateProject extends React.Component {
     }
 
     async onSubmit() {
-        console.log(this.store.client);
         const data = {
             id_user_manager: this.store.project_manager.id_user,
             description: this.store.description,
@@ -126,7 +167,14 @@ class CreateProject extends React.Component {
             id_user_client: this.store.client.id_user,
             id_project_type: this.store.project_type,
             is_private: this.store.isPrivate,
+            status: this.store.status
         };
+        if (this.props.edit) {
+            this.store.editProject(data)
+                .then(this.onSuccessEditProject)
+                .catch(this.onError);
+            return;
+        }
         if (!this.isCorrectData(data)) {
             this.store.error = "Все поля должны быть корректно заполнены";
             return;
@@ -137,8 +185,11 @@ class CreateProject extends React.Component {
             .catch(this.onError);
     }
 
+    onSuccessEditProject() {
+        console.log('edit');
+    }
+
     isCorrectData(data) {
-        console.log(data);
         return (data.id_user_manager && data.description && data.title
             && data.developers.length !== 0 && data.id_user_client && data.id_project_type)
     }

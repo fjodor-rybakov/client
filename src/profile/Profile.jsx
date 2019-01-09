@@ -55,7 +55,6 @@ class Profile extends Component {
     }
 
     async changePhoto(event) {
-        console.log(event.target.files[0]);
         const image = event.target.files[0];
         await this.loadImage(image)
             .then(data => this.store.photo = data)

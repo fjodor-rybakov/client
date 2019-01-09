@@ -28,7 +28,6 @@ class HomePage extends Component {
     }
 
     onSuccess(data) {
-        console.log(data);
         this.store.data = data;
     }
 

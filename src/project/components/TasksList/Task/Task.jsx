@@ -109,7 +109,6 @@ class Task extends React.Component {
 
     setTaskData(data) {
         this.store.taskData = JSON.parse(data);
-        console.log(this.store.taskData);
     }
 
     renderForm() {
@@ -128,7 +127,6 @@ class Task extends React.Component {
     }
 
     render() {
-        console.log(this.store.data);
         return (
             <div className={"task container"}>
                 <h4>{this.store.taskData.title}</h4>

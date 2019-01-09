@@ -32,7 +32,6 @@ class SingIn extends Component {
 
     handleAcceptUser(data) {
         localStorage.setItem("token", data.token);
-        console.log("token", data);
         window.location.reload();
     }
 

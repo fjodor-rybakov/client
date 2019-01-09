@@ -79,7 +79,6 @@ class AddTaskForm extends Component {
     }
 
     verifyData(data) {
-        console.log(!data.id_project, !data.id_user_manager, !data.description, !data.time, !data.title, !data.developers);
         return !(!data.id_project || !data.id_user_manager || !data.description || !data.time
             || !data.title || !data.developers)
 

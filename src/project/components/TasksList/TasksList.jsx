@@ -16,7 +16,7 @@ class TasksList extends React.Component {
         this.store.idProject = props.idProject;
     }
 
-    componentWillMount() {
+    async componentWillMount() {
         const options = {
             method: "GET",
             url: `${localStorage.getItem("serverAddress")}/api/tasks/${this.store.idProject}`,
@@ -25,7 +25,7 @@ class TasksList extends React.Component {
                 "Cache-Control": "private, max-age=0, no-cache"
             },
         };
-        rp(options)
+        await rp(options)
             .then(res => JSON.parse(res))
             .then(data => this.store.data = data)
             .catch(console.log);

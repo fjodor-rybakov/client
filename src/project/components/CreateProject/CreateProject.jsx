@@ -19,28 +19,28 @@ class CreateProject extends React.Component {
         })
     }
 
-    componentWillMount() {
-        Utils.getUserListByRole("developer")
+    async componentWillMount() {
+        await Utils.getUserListByRole("developer")
             .then((data) => {
                 this.store.developersList = data;
             });
-        Utils.getUserListByRole("project manager")
+        await Utils.getUserListByRole("project manager")
             .then((data) => {
                 this.store.pm_list = data;
             });
-        Utils.getUserListByRole("tester")
+        await Utils.getUserListByRole("tester")
             .then((data) => {
                 this.store.testersList = data;
             });
-        Utils.getUserListByRole("client")
+        await Utils.getUserListByRole("client")
             .then((data) => {
                 this.store.clientsList = data;
             });
-        Utils.getAllProjectType()
+        await Utils.getAllProjectType()
             .then((data) => {
                 this.store.projectTypes = data;
             });
-        Utils.getCurrentUserInfo()
+        await Utils.getCurrentUserInfo()
             .then((data) => {
                 this.store.userRole = data.role;
                 this.store.id_user = data.id_user;

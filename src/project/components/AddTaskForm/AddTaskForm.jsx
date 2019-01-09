@@ -21,17 +21,17 @@ class AddTaskForm extends Component {
         this.store.project_id = this.props.project_id;
     }
 
-    componentWillMount() {
+    async componentWillMount() {
         //todo получать только пользователей назначенных на проект
-        Utils.getUserListByRole("developer")
+        await Utils.getUserListByRole("developer")
             .then((data) => {
                 this.store.developerList = data;
             });
-        Utils.getUserListByRole("tester")
+        await Utils.getUserListByRole("tester")
             .then((data) => {
                 this.store.testerList = data;
             });
-        Utils.getCurrentUserInfo()
+        await Utils.getCurrentUserInfo()
             .then((data) =>
                 this.store.id_user = data.id_user
             )

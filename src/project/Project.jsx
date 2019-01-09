@@ -50,6 +50,7 @@ class Project extends Component {
     }
 
     successGetData(data) {
+        console.log("DATAAAAAAAAA", data);
         this.store.data = data.data;
         this.store.dev = data.developers;
         this.store.testers = data.testers;
@@ -82,12 +83,12 @@ class Project extends Component {
             },
         };
         await rp(options)
-            .then(JSON.parse)
             .then(window.location.replace("/projectList"))
             .catch(console.log);
     }
 
     render() {
+        console.log("RENDERRRRRRRRRRRR");
         return (
             <>
                 <Header title={this.store.data.title}/>

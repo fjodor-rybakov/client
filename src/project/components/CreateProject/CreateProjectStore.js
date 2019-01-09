@@ -43,7 +43,6 @@ class CreateProjectStore {
     }
 
     editProject(data) {
-        console.log(data);
         if (this.id === "") {
             this.error = "error";
         }

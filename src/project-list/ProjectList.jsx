@@ -50,7 +50,6 @@ class ProjectList extends Component {
     }
 
     rejectGetDataProjects(error) {
-        console.log(error);
         this.store.isRedirect = true;
     }
 

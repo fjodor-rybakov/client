@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ec09f3bb-ddbe-4ed5-baf9-153ab1692745" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/Project.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Project.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/components/CreateProject/CreateProject.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/components/CreateProject/CreateProject.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/components/TasksList/TasksList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/components/TasksList/TasksList.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="ec09f3bb-ddbe-4ed5-baf9-153ab1692745" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -19,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/project/Project.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1462">
-              <caret line="107" column="30" lean-forward="true" selection-start-line="107" selection-start-column="30" selection-end-line="107" selection-end-column="30" />
+            <state relative-caret-position="1037">
+              <caret line="88" column="14" selection-start-line="88" selection-start-column="14" selection-end-line="88" selection-end-column="14" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -31,10 +25,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/components/TasksList/TasksList.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="-663">
               <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
@@ -207,10 +201,10 @@
         <option value="$PROJECT_DIR$/src/project/Utils.js" />
         <option value="$PROJECT_DIR$/src/project/ProjectStore.js" />
         <option value="$PROJECT_DIR$/src/project/components/CreateProject/CreateProjectStore.js" />
-        <option value="$PROJECT_DIR$/src/project/Project.jsx" />
         <option value="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.jsx" />
         <option value="$PROJECT_DIR$/src/project/components/CreateProject/CreateProject.jsx" />
         <option value="$PROJECT_DIR$/src/project/components/TasksList/TasksList.jsx" />
+        <option value="$PROJECT_DIR$/src/project/Project.jsx" />
       </list>
     </option>
   </component>
@@ -357,12 +351,12 @@
       <workItem from="1546849981142" duration="6781000" />
       <workItem from="1546879048201" duration="2021000" />
       <workItem from="1547050213733" duration="9010000" />
-      <workItem from="1547065998043" duration="2822000" />
+      <workItem from="1547065998043" duration="3110000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153975000" />
+    <option name="totallyTimeSpent" value="154263000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -729,22 +723,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/Project.jsx">
+    <entry file="file://$PROJECT_DIR$/src/project/components/TasksList/TasksList.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1462">
-          <caret line="107" column="30" lean-forward="true" selection-start-line="107" selection-start-column="30" selection-end-line="107" selection-end-column="30" />
+        <state relative-caret-position="-663">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/components/TasksList/TasksList.jsx">
+    <entry file="file://$PROJECT_DIR$/src/project/Project.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+        <state relative-caret-position="1037">
+          <caret line="88" column="14" selection-start-line="88" selection-start-column="14" selection-end-line="88" selection-end-column="14" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>

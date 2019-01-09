@@ -29,7 +29,6 @@ class Utils {
             .then(JSON.parse)
             .then(data => res = data)
             .catch(console.log);
-        console.log(res);
         return res;
     }
 

@@ -56,6 +56,7 @@ class Profile extends Component {
 
     async changePhoto(event) {
         const image = event.target.files[0];
+        this.store.typeIMG = image.type.split("/")[1];
         await this.loadImage(image)
             .then(data => this.store.photo = data)
             .catch(console.log);
@@ -87,7 +88,8 @@ class Profile extends Component {
                 last_name: this.store.last_name,
                 email: this.store.email,
                 id_user: this.store.id_user,
-                photo: this.store.photo
+                photo: this.store.photo,
+                typeIMG: this.store.typeIMG
             },
             resolveWithFullResponse: true,
             json: true

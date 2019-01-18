@@ -11,6 +11,7 @@ class ProfileStore {
     @observable photo = "";
     @observable id_user = 0;
     @observable path = "";
+    @observable typeIMG = "";
 }
 
 export {ProfileStore}

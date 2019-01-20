@@ -12,7 +12,7 @@ class CommentsStore {
     @observable edited = "";
     @observable edited_id = "";
 
-    getComments() {
+    async getComments() {
         if (!this.id) {
             return;
         }
@@ -25,7 +25,7 @@ class CommentsStore {
                 "Cache-Control": "private, max-age=0, no-cache"
             },
         };
-        rp(options)
+        await rp(options)
             .then(JSON.parse)
             .then(this.onSuccess)
             .catch(console.log);
@@ -58,7 +58,7 @@ class CommentsStore {
         this.getComments();
     }
 
-    saveComment() {
+    async saveComment() {
         if (this.updated) {
             this.updateComment();
             return;
@@ -80,7 +80,7 @@ class CommentsStore {
             },
             json: true
         };
-        rp(options)
+        await rp(options)
             .then(this.onAddComment)
             .catch(console.log);
     }

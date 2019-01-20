@@ -1,6 +1,10 @@
 .project {
   padding: 0 10%;
 
+  &__disabled {
+    overflow: hidden;
+  }
+
   .btn {
     float: right;
   }

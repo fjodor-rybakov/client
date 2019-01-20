@@ -13,7 +13,7 @@ class Comments extends React.Component {
 
     componentWillMount() {
         this.store.id = this.props.taskId;
-        this.store.getComments();
+        this.store.getComments().then(console.log);
         Utils.getCurrentUserInfo().then(data =>
             this.store.id_user = data.id_user
         )
@@ -41,11 +41,17 @@ class Comments extends React.Component {
                 <div>
                     {this.store.comments.map((item, index) =>
                         <div key={index} className={"comment"}>
-                            <p
-                                className={"comment__text"}
-                                onClick={() => this.onUpdate(item)}
-                            >{item.text}
-                            </p>
+                            <img alt="1" className={"preview"} src={item.photo}/>
+                            <div>
+                                <div className={"name"}>
+                                    <span>{item.first_name} {item.last_name}</span>
+                                </div>
+                                <p
+                                    className={"comment__text"}
+                                    onClick={() => this.onUpdate(item)}
+                                >{item.text}
+                                </p>
+                            </div>
                             {item.id_user === this.store.id_user
                                 ? <div className={"comment__delete"}
                                        onClick={() => this.store.onDelete(item.id_comment)}/>

@@ -94,7 +94,7 @@ class Project extends Component {
 
     render() {
         return (
-            <>
+            <div className={this.store.isAddBlockShown ? "project__disabled" : ""}>
                 <Header title={this.store.data.title}/>
                 <div className={"project"}>
                     <p>{this.store.data.description}</p>
@@ -132,7 +132,7 @@ class Project extends Component {
                         : void 0
                     }
                 </div>
-            </>
+            </div>
         );
     }
 }

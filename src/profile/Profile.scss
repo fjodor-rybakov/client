@@ -1,0 +1,48 @@
+.avatar-profile {
+    width: 200px;
+    height: 200px;
+}
+
+#user-name, #user-email, #user-last_name, #user-role {
+    border: none;
+    width: 200px;
+    box-shadow: none;
+}
+
+#photo-upload {
+    width: 270px;
+}
+
+#back {
+    margin-top: 20px;
+}
+
+.profile {
+
+    .tasks {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        border: 1px solid;
+        border-radius: 4px;
+        width: 300px;
+        margin-bottom: 10px;
+        padding: 10px;
+
+        &__done {
+            border-color: green;
+        }
+
+        &__in {
+            border-color: orange;
+        }
+
+        &__open {
+            border-color: cadetblue;
+        }
+    }
+}

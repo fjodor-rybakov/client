@@ -4,7 +4,7 @@ import {Redirect} from "react-router";
 import {ProfileStore} from "./ProfileStore";
 import * as React from "react";
 import {autobind} from "core-decorators";
-import "./Profile.css";
+import "./Profile.scss";
 import * as rp from "request-promise";
 import {Button} from "../button/Button";
 import {Link} from "react-router-dom";
@@ -117,7 +117,7 @@ class Profile extends Component {
             return <Redirect to={"/signin"}/>
         } else {
             return (
-                <div className={"container"}>
+                <div className={"profile container"}>
                     <div className={"form-group"}>
                         <img src={this.store.path} className={"avatar-profile"} alt={"img"}/>
                         <input
@@ -159,10 +159,11 @@ class Profile extends Component {
                             this.store.validateErr !== "" &&
                             <div role={"alert"} ref={this.validateRef}>{this.store.validateErr}</div>
                         }
-                        <div>
+                        <h4>My Tasks</h4>
+                        <div className={"tasks"}>
                             {this.store.tracks.map((task, index) => {
                                 return (
-                                    <div key={index} className={"card"}>
+                                    <div key={index} className={"card card__"+task.status.split(" ")[0]}>
                                         <Link to={`project/${task.id_project}/${task.id_task}`}>
                                             <div>
                                                 <p className={"tasks-list__header"}>{task.title}</p>

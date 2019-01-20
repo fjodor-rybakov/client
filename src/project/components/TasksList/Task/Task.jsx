@@ -199,15 +199,25 @@ class Task extends React.Component {
                     <h3>{this.store.taskData.title}</h3>
                     <h4>{this.store.taskData.status}</h4>
                     <p className={"task_description"}>{this.store.taskData.description}</p>
-                    {
-                        this.store.canCreate
-                            ? <Button text={"Add Time"} onClick={this.showForm}/>
-                            : void 0
-                    }
                     {this.store.taskData.photo
-                        ? <img alt="1" src={this.store.taskData.photo}/>
+                        ? <img className={"img"} alt="1" src={this.store.taskData.photo}/>
                         : void 0
                     }
+                    <div className={"buttons"}>
+                        {
+                            this.store.canCreate
+                                ? <Button text={"Add Time"} onClick={this.showForm}/>
+                                : void 0
+                        }
+                        <button
+                            type="button"
+                            id={"task-list-button__update"}
+                            className={"btn btn-warning"}
+                            onClick={this.updateTask}
+                        >
+                            Update Task
+                        </button>
+                    </div>
                     {
                         this.store.isFormShown
                             ? this.renderForm()
@@ -224,14 +234,6 @@ class Task extends React.Component {
                         })
                     }
 
-                    <button
-                        type="button"
-                        id={"task-list-button__update"}
-                        className={"btn btn-warning"}
-                        onClick={this.updateTask}
-                    >
-                        Update Task
-                    </button>
                     <Comments taskId={this.store.id}/>
                 </div>
                 <AddTaskForm

@@ -33,6 +33,7 @@ class CommentsStore {
 
     onSuccess(data) {
         this.comments = data;
+        console.log(data);
     }
 
     updateComment() {
@@ -55,7 +56,7 @@ class CommentsStore {
         this.edited_id = "";
         this.updated = false;
         this.edited = "";
-        this.getComments();
+        this.getComments().then(console.log);
     }
 
     async saveComment() {
@@ -87,7 +88,7 @@ class CommentsStore {
 
     onAddComment() {
         this.text = "";
-        this.getComments();
+        this.getComments().then(console.log);
     }
 
     onDelete(id) {

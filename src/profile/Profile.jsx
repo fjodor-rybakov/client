@@ -162,16 +162,17 @@ class Profile extends Component {
                         <h4>My Tasks</h4>
                         <div className={"tasks"}>
                             {this.store.tracks.map((task, index) => {
-                                return (
-                                    <div key={index} className={"card card__"+task.status.split(" ")[0]}>
-                                        <Link to={`project/${task.id_project}/${task.id_task}`}>
-                                            <div>
-                                                <p className={"tasks-list__header"}>{task.title}</p>
-                                                <p className={"tasks-list__status"}>{task.status}</p>
-                                            </div>
-                                        </Link>
-                                    </div>
-                                )
+                                if (task.status)
+                                    return (
+                                        <div key={index} className={"card card__"+task.status.split(" ")[0]}>
+                                            <Link to={`project/${task.id_project}/${task.id_task}`}>
+                                                <div>
+                                                    <p className={"tasks-list__header"}>{task.title}</p>
+                                                    <p className={"tasks-list__status"}>{task.status}</p>
+                                                </div>
+                                            </Link>
+                                        </div>
+                                    )
                             })}
                         </div>
                     </div>

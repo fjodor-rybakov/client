@@ -172,10 +172,12 @@ class Task extends React.Component {
     }
 
     onEdit(item) {
-        const start = item.start_data.split("T");
+        console.log(item);
+        const start = item.start_data.split(" ");
         this.store.startData = start[0];
+        console.log(start);
         this.store.startTime = start[1].split(":")[0] + ":" + start[1].split(":")[1];
-        const end = item.finish_data.split("T");
+        const end = item.finish_data.split(" ");
         this.store.endData = end[0];
         this.store.endTime = end[1].split(":")[0] + ":" + end[1].split(":")[1];
         this.store.description = item.description;

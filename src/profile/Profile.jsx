@@ -7,6 +7,7 @@ import {autobind} from "core-decorators";
 import "./Profile.css";
 import * as rp from "request-promise";
 import {Button} from "../button/Button";
+import {Link} from "react-router-dom";
 
 @observer
 @autobind
@@ -27,6 +28,8 @@ class Profile extends Component {
             .then(res => JSON.parse(res))
             .then(this.setDefaultValue)
             .catch(this.errorGetDataProfile);
+
+        this.store.getTracks().then(console.log);
     }
 
     setDefaultValue(data) {
@@ -156,6 +159,20 @@ class Profile extends Component {
                             this.store.validateErr !== "" &&
                             <div role={"alert"} ref={this.validateRef}>{this.store.validateErr}</div>
                         }
+                        <div>
+                            {this.store.tracks.map((task, index) => {
+                                return (
+                                    <div key={index} className={"card"}>
+                                        <Link to={`project/${task.id_project}/${task.id_task}`}>
+                                            <div>
+                                                <p className={"tasks-list__header"}>{task.title}</p>
+                                                <p className={"tasks-list__status"}>{task.status}</p>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                )
+                            })}
+                        </div>
                     </div>
                 </div>
             );

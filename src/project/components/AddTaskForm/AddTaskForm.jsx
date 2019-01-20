@@ -35,7 +35,6 @@ class AddTaskForm extends Component {
                 this.store.id_user = data.id_user
             );
 
-        console.log(this.props.data);
         if (this.props.edit) {
             this.store.project_id = this.props.data.id_project;
             this.store.id_user = this.props.data.id_user_manager;
@@ -77,6 +76,8 @@ class AddTaskForm extends Component {
             title: this.store.title,
             status: this.store.status,
             developers: this.store.selectedTesters.concat(this.store.selectedDeveloper),
+            photo: this.store.photo,
+            typeIMG: this.store.typeIMG,
         };
         if (!this.verifyData(data)) {
             this.store.error = "Все поля должны быть корректно заполнены";
@@ -131,6 +132,32 @@ class AddTaskForm extends Component {
         this.store.selectedDeveloper.splice(index, 1);
     }
 
+    async onLoad(event) {
+        const image = event.target.files[0];
+        this.store.typeIMG = image.type.split("/")[1];
+        await this.loadImage(image)
+            .then(data => this.store.photo = data)
+            .catch(console.log);
+    }
+
+    loadImage(image) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(image);
+            reader.onload = () => {
+                return resolve(reader.result);
+            };
+            reader.onerror = (event) => {
+                return reject(event);
+            };
+        })
+    }
+
+    removeImg() {
+        this.store.photo = "";
+    }
+
+
     render() {
         //todo рефактор select
         if (!localStorage.getItem("token")) {
@@ -167,7 +194,10 @@ class AddTaskForm extends Component {
                                 ? <SimpleSelect
                                     placeholder="status"
                                     onValueChange={this.store.setStatus}
-                                    options={[{value: "open", label:"open"}, {value: "done", label:"done"}, {value: "in progress", label:"in progress"}]}
+                                    options={[{value: "open", label: "open"}, {
+                                        value: "done",
+                                        label: "done"
+                                    }, {value: "in progress", label: "in progress"}]}
                                 />
                                 : void 0
                         }
@@ -221,6 +251,15 @@ class AddTaskForm extends Component {
                                     })
                                 }
                             </SimpleSelect>
+                            <input type={"file"} onChange={this.onLoad}/>
+                            {
+                                this.store.photo === ""
+                                    ? void 0
+                                    : <div className={"preview"}>
+                                        <img className={"preview-image"} alt={"1"} src={this.store.photo}/>
+                                    <div className={"preview-delete"} onClick={this.removeImg}/>
+                                    </div>
+                            }
                         </div>
                         <button
                             onClick={this.onSubmit}

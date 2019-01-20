@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec09f3bb-ddbe-4ed5-baf9-153ab1692745" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/profile/Profile.jsx" afterPath="$PROJECT_DIR$/src/profile/Profile.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/profile/ProfileStore.js" afterPath="$PROJECT_DIR$/src/profile/ProfileStore.js" />
+      <change beforePath="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.jsx" afterPath="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.jsx" />
+      <change beforePath="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.scss" afterPath="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.scss" />
+      <change beforePath="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskFormStore.js" afterPath="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskFormStore.js" />
       <change beforePath="$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx" afterPath="$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx" />
-      <change beforePath="$PROJECT_DIR$/src/project/components/TasksList/Task/Task.scss" afterPath="$PROJECT_DIR$/src/project/components/TasksList/Task/Task.scss" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,36 +21,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Task.jsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx">
+      <file leaf-file-name="AddTaskForm.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="175" column="43" lean-forward="false" selection-start-line="175" selection-start-column="38" selection-end-line="175" selection-end-column="43" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaskStore.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/components/TasksList/Task/TaskStore.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Task.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/components/TasksList/Task/Task.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+            <state relative-caret-position="-1449">
+              <caret line="136" column="54" lean-forward="false" selection-start-line="136" selection-start-column="54" selection-end-line="136" selection-end-column="54" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddTaskForm.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="467">
+              <caret line="45" column="24" lean-forward="false" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddTaskFormStore.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskFormStore.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="18" column="29" lean-forward="false" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Profile.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/profile/Profile.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -56,8 +67,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&quot;autobind-decorator&quot;</find>
-      <find>op</find>
       <find>&quot;Cache-Control&quot;: &quot;private, max-age=0, no-cache&quot;</find>
       <find>options</find>
       <find>select</find>
@@ -86,6 +95,8 @@
       <find>timeIn</find>
       <find>add</find>
       <find>split</find>
+      <find>canCreate</find>
+      <find>type</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -103,7 +114,6 @@
         <option value="$PROJECT_DIR$/src/header/Header.scss" />
         <option value="$PROJECT_DIR$/src/project/Project.scss" />
         <option value="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.css" />
-        <option value="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.scss" />
         <option value="$PROJECT_DIR$/src/header/Header.jsx" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/layout.jsx" />
@@ -113,7 +123,6 @@
         <option value="$PROJECT_DIR$/src/button/Button.scss" />
         <option value="$PROJECT_DIR$/src/button/Button.jsx" />
         <option value="$PROJECT_DIR$/src/project-list/ProjectList.scss" />
-        <option value="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskFormStore.js" />
         <option value="$PROJECT_DIR$/src/sign-up/SignUpStyle.scss" />
         <option value="$PROJECT_DIR$/src/sign-in/SingIn.jsx" />
         <option value="$PROJECT_DIR$/src/sign-in/SignInStyle.scss" />
@@ -129,12 +138,9 @@
         <option value="$PROJECT_DIR$/src/project/components/CreateProject/CreateProject.scss" />
         <option value="$PROJECT_DIR$/src/project/ProjectStore.js" />
         <option value="$PROJECT_DIR$/src/project/components/CreateProject/CreateProjectStore.js" />
-        <option value="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.jsx" />
         <option value="$PROJECT_DIR$/src/project/components/CreateProject/CreateProject.jsx" />
         <option value="$PROJECT_DIR$/src/project/components/TasksList/TasksList.jsx" />
         <option value="$PROJECT_DIR$/src/project/Project.jsx" />
-        <option value="$PROJECT_DIR$/src/profile/ProfileStore.js" />
-        <option value="$PROJECT_DIR$/src/profile/Profile.jsx" />
         <option value="$PROJECT_DIR$/src/utils/Utils.js" />
         <option value="$PROJECT_DIR$/src/project/components/TasksList/Task/components/Comments.scss" />
         <option value="$PROJECT_DIR$/src/project/components/TasksList/Task/components/Comments.jsx" />
@@ -142,7 +148,12 @@
         <option value="$PROJECT_DIR$/src/project/Utils.js" />
         <option value="$PROJECT_DIR$/src/project/components/TasksList/Task/TaskStore.js" />
         <option value="$PROJECT_DIR$/src/project/components/TasksList/Task/Task.scss" />
+        <option value="$PROJECT_DIR$/src/profile/ProfileStore.js" />
         <option value="$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx" />
+        <option value="$PROJECT_DIR$/src/profile/Profile.jsx" />
+        <option value="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.scss" />
+        <option value="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskFormStore.js" />
+        <option value="$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.jsx" />
       </list>
     </option>
   </component>
@@ -161,7 +172,7 @@
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="28" />
     <option name="width" value="1346" />
     <option name="height" value="688" />
@@ -193,25 +204,19 @@
             <path>
               <item name="client-order-task" type="b2602c69:ProjectViewProjectNode" />
               <item name="client-order-task" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="node_modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="client-order-task" type="b2602c69:ProjectViewProjectNode" />
               <item name="client-order-task" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="profile" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="client-order-task" type="b2602c69:ProjectViewProjectNode" />
               <item name="client-order-task" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="project" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="client-order-task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="client-order-task" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="project" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="client-order-task" type="b2602c69:ProjectViewProjectNode" />
@@ -219,7 +224,6 @@
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="project" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="TasksList" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="client-order-task" type="b2602c69:ProjectViewProjectNode" />
@@ -227,8 +231,7 @@
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="project" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="TasksList" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Task" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AddTaskForm" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="client-order-task" type="b2602c69:ProjectViewProjectNode" />
@@ -236,9 +239,8 @@
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="project" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="TasksList" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Task" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AddTaskForm" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="img" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -345,27 +347,28 @@
       <workItem from="1547749327803" duration="1145000" />
       <workItem from="1547838806256" duration="2285000" />
       <workItem from="1547973557599" duration="7335000" />
-      <workItem from="1548008437517" duration="625000" />
+      <workItem from="1548008437517" duration="5375000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173538000" />
+    <option name="totallyTimeSpent" value="178288000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19763695" sideWeight="0.4940978" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.5042965" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25725028" sideWeight="0.5059022" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33069083" sideWeight="0.49570355" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19763695" sideWeight="0.4940978" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -374,7 +377,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -522,13 +524,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskFormStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/react-selectize/src/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -571,27 +566,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="23" column="26" lean-forward="false" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/components/CreateProject/CreateProject.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
           <caret line="52" column="17" lean-forward="false" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/Project.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="84" column="58" lean-forward="false" selection-start-line="84" selection-start-column="58" selection-end-line="84" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -642,32 +620,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react/cjs/react.development.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="1699" column="0" lean-forward="false" selection-start-line="1699" selection-start-column="0" selection-end-line="1699" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/profile/ProfileStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/profile/Profile.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1785">
-          <caret line="93" column="42" lean-forward="false" selection-start-line="93" selection-start-column="42" selection-end-line="93" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="9915" column="4" lean-forward="false" selection-start-line="9915" selection-start-column="4" selection-end-line="9915" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -687,21 +644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
           <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/components/TasksList/TasksList.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="21" column="91" lean-forward="false" selection-start-line="21" selection-start-column="91" selection-end-line="21" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="32" column="20" lean-forward="false" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -754,18 +696,82 @@
         <state relative-caret-position="525">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react/cjs/react.development.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="1700" column="2" lean-forward="false" selection-start-line="1700" selection-start-column="2" selection-end-line="1700" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/profile/ProfileStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="35" column="26" lean-forward="false" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/components/TasksList/Task/Task.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="175" column="43" lean-forward="false" selection-start-line="175" selection-start-column="38" selection-end-line="175" selection-end-column="43" />
+        <state relative-caret-position="-743">
+          <caret line="44" column="76" lean-forward="true" selection-start-line="44" selection-start-column="76" selection-end-line="44" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/Project.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="114" column="26" lean-forward="false" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/components/TasksList/TasksList.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="50" column="14" lean-forward="true" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskFormStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="18" column="29" lean-forward="false" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="45" column="24" lean-forward="false" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/profile/Profile.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/components/AddTaskForm/AddTaskForm.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1449">
+          <caret line="136" column="54" lean-forward="false" selection-start-line="136" selection-start-column="54" selection-end-line="136" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>

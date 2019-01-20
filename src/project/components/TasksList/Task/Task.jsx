@@ -42,7 +42,7 @@ class Task extends React.Component {
 
         const data = {
             method: 'GET',
-            uri: `${localStorage.getItem("serverAddress")}/api/project/permission`,
+            uri: `${localStorage.getItem("serverAddress")}/api/track/permission/${this.store.id}`,
             headers: {
                 "x-guide-key": localStorage.getItem("token"),
                 "Cache-Control": "private, max-age=0, no-cache"

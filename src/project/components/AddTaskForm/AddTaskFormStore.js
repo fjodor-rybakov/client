@@ -15,6 +15,8 @@ class AddTaskFormStore {
     @observable description = "";
     @observable time = "";
     @observable title = "";
+    @observable photo = "";
+    @observable typeIMG = "";
     status = "";
 
     setStatus(status) {

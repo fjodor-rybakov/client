@@ -49,8 +49,9 @@ class CreateProject extends React.Component {
     }
 
     setData(data) {
+        console.log(this.props.data);
         if (this.props.edit) {
-            this.store.id = this.props.data.id_project;
+            this.store.id = this.props.id;
             this.store.client = {id_user: this.props.data.id_user_client};
             this.store.project_manager = {id_user: this.props.data.id_project_manager};
             this.store.description = this.props.data.description;
@@ -185,6 +186,7 @@ class CreateProject extends React.Component {
     }
 
     onSuccessEditProject() {
+        this.props.onEdit();
     }
 
     isCorrectData(data) {

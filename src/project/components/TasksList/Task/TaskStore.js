@@ -1,5 +1,5 @@
 import {autobind} from "core-decorators";
-import {observable} from "mobx/lib/mobx";
+import {observable} from "mobx";
 
 @autobind
 class TaskStore {
@@ -11,6 +11,7 @@ class TaskStore {
     };
     @observable taskData = [];
     @observable canCreate = false;
+    @observable isFormVisible = false;
     startData;
     startTime;
     endData;

@@ -46,9 +46,7 @@ class TasksList extends React.Component {
             .catch(console.log);
     }
 
-    updateTask(event) {
-        // TODO: сделать форму для обновления таска
-    }
+
 
     render() {
         return (
@@ -71,16 +69,7 @@ class TasksList extends React.Component {
                                             className={"btn btn-danger"}
                                             data-id={task.id_task}
                                             onClick={this.deleteTask}
-                                        >
-                                            Delete Task
-                                        </button>
-                                        <button
-                                            type="button"
-                                            id={"task-list-button__update"}
-                                            className={"btn btn-warning"}
-                                            onClick={this.updateTask}
-                                        >
-                                            Update Task
+                                        >x
                                         </button>
                                     </div>
                                 )

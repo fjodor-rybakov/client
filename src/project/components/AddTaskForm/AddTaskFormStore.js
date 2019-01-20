@@ -12,9 +12,14 @@ class AddTaskFormStore {
     @observable selectedTesters = [];
     @observable developerList = [];
     @observable testerList = [];
-    description = "";
-    time = "";
-    title = "";
+    @observable description = "";
+    @observable time = "";
+    @observable title = "";
+    status = "";
+
+    setStatus(status) {
+        this.status = status.value;
+    }
 }
 
 export {AddTaskFormStore}

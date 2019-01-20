@@ -18,6 +18,20 @@ class AddTaskFormController extends Component {
         return rp(options);
     }
 
+    async updateTask(data, idTask) {
+        const options = {
+            method: "PUT",
+            url: `${localStorage.getItem("serverAddress")}/api/task/${idTask}`,
+            headers: {
+                "x-guide-key": localStorage.getItem("token"),
+                "Cache-Control": "private, max-age=0, no-cache"
+            },
+            body: data,
+            json: true
+        };
+        return rp(options);
+    }
+
 }
 
 export {AddTaskFormController}

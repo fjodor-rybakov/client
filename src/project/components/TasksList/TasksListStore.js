@@ -21,6 +21,8 @@ class TasksListStore {
     set idProject(id) {
         this._idProject = id;
     }
+
+    @observable isFormVisible = false;
 }
 
 export {TasksListStore};

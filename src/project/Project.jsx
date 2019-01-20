@@ -9,6 +9,7 @@ import * as rp from "request-promise";
 import {Header} from "../header/Header";
 import "./Project.scss";
 import {CreateProject} from "./components/CreateProject/CreateProject";
+import {Button} from "../button/Button";
 
 @autobind
 @observer
@@ -86,37 +87,50 @@ class Project extends Component {
             .catch(console.log);
     }
 
+    onEditProject() {
+        this.store.isFormShown = false;
+        this.forceUpdate();
+    }
+
     render() {
         return (
             <>
                 <Header title={this.store.data.title}/>
                 <div className={"project"}>
                     <p>{this.store.data.description}</p>
+                    <button onClick={this.deleteProject} type="button" className="btn btn-danger">Delete Project</button>
+                    <Button text={"Edit Project"} onClick={() => this.store.isFormShown = true}/>
+                    <Button text={'View Tasks'} onClick={this.showTasksList}/>
                     {
                         this.store.canCreate
-                            ? <button onClick={this.handleClickOpen} type="button" className="btn btn-primary">Add task</button>
+                            ? <button onClick={this.handleClickOpen} type="button" className="btn btn-primary">Add
+                                task</button>
                             : void 0
                     }
                     <AddTaskForm
                         project_id={this.store.id}
-                        isVisible ={this.store.isAddBlockShown}
+                        isVisible={this.store.isAddBlockShown}
                         onHide={this.onHideAddBlock}
                     />
-                    <button onClick={this.showTasksList}>View Tasks</button>
                     <TasksList
+                        pojectId={this.store.id}
                         isVisible={this.store.isTaskListVisible}
                         idProject={this.store.id}
                         onClose={this.onHide}
                     />
-                    <button onClick={this.deleteProject} type="button" className="btn btn-danger">Delete Project</button>
-                    <div>
-                        <CreateProject
-                            edit={true}
-                            data={this.store.data}
-                            testers={this.store.testers}
-                            dev={this.store.dev}
-                        />
-                    </div>
+                    {this.store.isFormShown
+                        ? <div className={"edit-container"}>
+                            <CreateProject
+                                edit={true}
+                                data={this.store.data}
+                                testers={this.store.testers}
+                                dev={this.store.dev}
+                                onEdit={this.onEditProject}
+                                id = {this.store.id}
+                            />
+                        </div>
+                        : void 0
+                    }
                 </div>
             </>
         );

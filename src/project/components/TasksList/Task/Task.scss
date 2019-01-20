@@ -1,4 +1,13 @@
 .task {
+  .add-form {
+    display: flex;
+    align-items: center;
+
+    &-item {
+      margin-right: 10px;
+    }
+  }
+
   .add-form-item {
     display: block;
     margin-top: 10px;

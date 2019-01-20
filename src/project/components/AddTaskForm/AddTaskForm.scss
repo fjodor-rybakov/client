@@ -12,6 +12,11 @@
     border-radius: 6px;
     padding: 30px;
     max-width: 500px;
+    padding-bottom: 45px;
+
+    .btn {
+      float: right;
+    }
 
     .form-control {
       margin-bottom: 20px;
@@ -48,6 +53,10 @@
         letter-spacing: 1.3px;
 
       }
+    }
+
+    .react-selectize {
+      margin-bottom: 10px;
     }
 
     .close-form-icon {

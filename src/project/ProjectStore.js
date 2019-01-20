@@ -10,6 +10,7 @@ class ProjectStore {
     @observable data = {};
     @observable isAddBlockShown = false;
     @observable isTaskListVisible = false;
+    @observable isFormShown = false;
 }
 
 export {ProjectStore};

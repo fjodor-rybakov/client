@@ -5,6 +5,8 @@ import {observer} from "mobx-react/index";
 import * as rp from "request-promise";
 import "./Task.scss";
 import {Button} from "../../../../button/Button";
+import {AddTaskForm} from "../../AddTaskForm/AddTaskForm";
+import {Comments} from "./components/Comments";
 
 @autobind
 @observer
@@ -78,6 +80,7 @@ class Task extends React.Component {
             .catch(console.log);
     }
 
+
     onChangeStartData(event) {
         this.store.startData = event.target.value;
     }
@@ -111,44 +114,70 @@ class Task extends React.Component {
         this.store.taskData = JSON.parse(data);
     }
 
+    updateTask() {
+        this.store.isFormVisible = true;
+    }
+
+    onHideForm() {
+        this.store.isFormVisible = false;
+    }
+
     renderForm() {
         return (
-            <>
-                <div>Add</div>
+            <div className={"add-form"}>
                 <input type={"date"} className={"add-form-item"} required={true} onChange={this.onChangeStartData}/>
                 <input type={"time"} className={"add-form-item"} required={true} onChange={this.onChangeStartTime}/>
                 <input type={"date"} required={true} className={"add-form-item"} onChange={this.onChangeEndData}/>
                 <input type={"time"} required={true} className={"add-form-item"} onChange={this.onChangeEndTime}/>
                 <textarea className={"add-form-item"} onChange={this.onChangeDescription}/>
                 <button onClick={this.addTrack}>Add</button>
-            </>
+            </div>
         )
 
     }
 
     render() {
         return (
-            <div className={"task container"}>
-                <h4>{this.store.taskData.title}</h4>
-                <p className={"task_description"}>{this.store.taskData.description}</p>
-                {
-                    this.store.canCreate
-                        ? <Button text={"Add Time"} onClick={this.showForm}/>
-                        : void 0
-                }
-                {
-                    this.store.isFormShown
-                        ? this.renderForm()
-                        : void 0
-                }
-                {
-                    this.store.data.tracks.map((item, index) => {
-                        return (
-                            <p key={index}>{item.description}</p>
-                        )
-                    })
-                }
-            </div>
+            <>
+                <div className={"task container"}>
+                    <h3>{this.store.taskData.title}</h3>
+                    <h4>{this.store.taskData.status}</h4>
+                    <p className={"task_description"}>{this.store.taskData.description}</p>
+                    {
+                        this.store.canCreate
+                            ? <Button text={"Add Time"} onClick={this.showForm}/>
+                            : void 0
+                    }
+                    {
+                        this.store.isFormShown
+                            ? this.renderForm()
+                            : void 0
+                    }
+                    {
+                        this.store.data.tracks.map((item, index) => {
+                            return (
+                                <p key={index}>{item.description}</p>
+                            )
+                        })
+                    }
+                    <button
+                        type="button"
+                        id={"task-list-button__update"}
+                        className={"btn btn-warning"}
+                        onClick={this.updateTask}
+                    >
+                        Update Task
+                    </button>
+                    <Comments taskId={this.store.id}/>
+                </div>
+                <AddTaskForm
+                    onHide={this.onHideForm}
+                    isVisible={this.store.isFormVisible}
+                    edit={true}
+                    idTask={this.store.id}
+                    data={this.store.taskData}
+                />
+            </>
         )
     }
 }

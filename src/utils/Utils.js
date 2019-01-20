@@ -1,5 +1,5 @@
 export class Utils {
-    isAuthorisation() {
+    static isAuthorisation() {
         return localStorage.getItem("token")
     }
 }

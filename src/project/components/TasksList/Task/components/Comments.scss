@@ -1,0 +1,28 @@
+.comments {
+  .comment {
+    width: 500px;
+    border: 1px solid #D4D4D4;
+    border-radius: 4px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin-top: 20px;
+    position: relative;
+
+    &__text {
+      margin: 0;
+      resize: none;
+      border: none;
+    }
+
+    &__delete {
+      width: 15px;
+      height: 15px;
+      background: url("img/close-icon.svg") round;
+      cursor: pointer;
+      position: absolute;
+      right: 10px;
+    }
+  }
+}

@@ -22,7 +22,6 @@ class AddTaskForm extends Component {
     }
 
     async componentWillMount() {
-        //todo получать только пользователей назначенных на проект
         await Utils.getUserListByRole("developer")
             .then((data) => {
                 this.store.developerList = data;
@@ -34,7 +33,17 @@ class AddTaskForm extends Component {
         await Utils.getCurrentUserInfo()
             .then((data) =>
                 this.store.id_user = data.id_user
-            )
+            );
+
+        console.log(this.props.data);
+        if (this.props.edit) {
+            this.store.project_id = this.props.data.id_project;
+            this.store.id_user = this.props.data.id_user_manager;
+            this.store.description = this.props.data.description;
+            this.store.time = this.props.data.time;
+            this.store.title = this.props.data.title;
+            this.store.status = this.props.data.status;
+        }
     }
 
     onSelectDeveloper(selectedOption) {
@@ -66,13 +75,20 @@ class AddTaskForm extends Component {
             description: this.store.description,
             time: +this.store.time,
             title: this.store.title,
-            developers: this.store.selectedTesters.concat(this.store.selectedDeveloper)
+            status: this.store.status,
+            developers: this.store.selectedTesters.concat(this.store.selectedDeveloper),
         };
         if (!this.verifyData(data)) {
             this.store.error = "Все поля должны быть корректно заполнены";
             return;
         }
         this.store.error = "";
+        if (this.props.edit) {
+            this.controller.updateTask(data, this.props.idTask)
+                .then(this.onSuccessCreateTask)
+                .catch(console.log);
+            return;
+        }
         this.controller.addTask(data)
             .then(this.onSuccessCreateTask)
             .catch(console.log);
@@ -129,20 +145,32 @@ class AddTaskForm extends Component {
                             type={"text"}
                             placeholder={"Task Title"}
                             required={true}
+                            value={this.store.title}
                             onChange={this.onChangeTitle}
                         />
                         <textarea
                             className={"form-control"}
                             placeholder={"Description"}
+                            value={this.store.description}
                             onChange={this.onChangeDescription}
                         />
                         <input
                             className={"form-control time"}
                             type={"text"}
+                            value={this.store.time}
                             placeholder={"Time"}
                             onChange={this.onChangeTime}
                         />
                         <span>(hours)</span>
+                        {
+                            this.props.edit
+                                ? <SimpleSelect
+                                    placeholder="status"
+                                    onValueChange={this.store.setStatus}
+                                    options={[{value: "open", label:"open"}, {value: "done", label:"done"}, {value: "in progress", label:"in progress"}]}
+                                />
+                                : void 0
+                        }
                         <div className={"team"}>
                             <p className={"team-header"}>Team:</p>
                             <p>Developer:</p>
@@ -193,17 +221,17 @@ class AddTaskForm extends Component {
                                     })
                                 }
                             </SimpleSelect>
-                            <button
-                                onClick={this.onSubmit}
-                                type="button"
-                                className="btn btn-success"
-                            >Save Task
-                            </button>
-                            {
-                                this.store.error !== "" &&
-                                <div className={"alert alert-danger"} role={"alert"}>{this.store.error}</div>
-                            }
                         </div>
+                        <button
+                            onClick={this.onSubmit}
+                            type="button"
+                            className="btn btn-success"
+                        >Save Task
+                        </button>
+                        {
+                            this.store.error !== "" &&
+                            <div className={"alert alert-danger"} role={"alert"}>{this.store.error}</div>
+                        }
                     </div>
                 </div>
             );

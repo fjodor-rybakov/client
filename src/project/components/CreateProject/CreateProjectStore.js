@@ -4,7 +4,7 @@ import * as rp from "request-promise";
 
 @autobind
 class CreateProjectStore {
-    id = "";
+    @observable id = "";
     @observable error = "";
     @observable status = "open";
     @observable title = "";
@@ -46,6 +46,7 @@ class CreateProjectStore {
         if (this.id === "") {
             this.error = "error";
         }
+        console.log(data);
         const options = {
             method: "PUT",
             url: `${localStorage.getItem("serverAddress")}/api/project/${this.id}`,

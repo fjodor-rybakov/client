@@ -147,6 +147,7 @@ class Task extends React.Component {
 
     setTaskData(data) {
         this.store.taskData = JSON.parse(data);
+        console.log(this.store.taskData);
     }
 
     updateTask() {
@@ -161,11 +162,16 @@ class Task extends React.Component {
         const text = this.store.edit ? "Update" : "Add time";
         return (
             <div className={"add-form"}>
-                <input type={"date"} className={"add-form-item"} value={this.store.startData} onChange={this.onChangeStartData}/>
-                <TimeInput className={"add-form-item"} initTime={this.store.startTime} onTimeChange={this.onChangeStartTime}/>
-                <input type={"date"} value={this.store.endData} className={"add-form-item"} onChange={this.onChangeEndData}/>
-                <TimeInput initTime={this.store.endTime} className={"add-form-item"} onTimeChange={this.onChangeEndTime}/>
-                <textarea className={"add-form-item"} value={this.store.description} onChange={this.onChangeDescription}/>
+                <input type={"date"} className={"add-form-item"} value={this.store.startData}
+                       onChange={this.onChangeStartData}/>
+                <TimeInput className={"add-form-item"} initTime={this.store.startTime}
+                           onTimeChange={this.onChangeStartTime}/>
+                <input type={"date"} value={this.store.endData} className={"add-form-item"}
+                       onChange={this.onChangeEndData}/>
+                <TimeInput initTime={this.store.endTime} className={"add-form-item"}
+                           onTimeChange={this.onChangeEndTime}/>
+                <textarea className={"add-form-item"} value={this.store.description}
+                          onChange={this.onChangeDescription}/>
                 <button onClick={this.addTrack}>{text}</button>
             </div>
         )
@@ -198,6 +204,10 @@ class Task extends React.Component {
                             ? <Button text={"Add Time"} onClick={this.showForm}/>
                             : void 0
                     }
+                    {this.store.taskData.photo
+                        ? <img alt="1" src={this.store.taskData.photo}/>
+                        : void 0
+                    }
                     {
                         this.store.isFormShown
                             ? this.renderForm()
@@ -213,6 +223,7 @@ class Task extends React.Component {
                             )
                         })
                     }
+
                     <button
                         type="button"
                         id={"task-list-button__update"}

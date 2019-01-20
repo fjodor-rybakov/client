@@ -12,11 +12,13 @@ class TaskStore {
     @observable taskData = [];
     @observable canCreate = false;
     @observable isFormVisible = false;
-    startData;
-    startTime;
-    endData;
-    endTime;
-    description;
+    @observable edit = false;
+    @observable edit_data = {};
+    @observable startData;
+    @observable startTime = "00:00";
+    @observable endData;
+    @observable endTime="00:00";
+    @observable description;
 
     get id() {
         return this._id

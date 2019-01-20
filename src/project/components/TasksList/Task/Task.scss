@@ -8,6 +8,21 @@
     }
   }
 
+  .track {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    max-width: 600px;
+
+    .edit {
+      float: right;
+    }
+  }
+
   .add-form-item {
     display: block;
     margin-top: 10px;

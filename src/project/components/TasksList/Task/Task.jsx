@@ -7,7 +7,6 @@ import "./Task.scss";
 import {Button} from "../../../../button/Button";
 import {AddTaskForm} from "../../AddTaskForm/AddTaskForm";
 import {Comments} from "./components/Comments";
-import TimeInput from 'react-time-input';
 
 @autobind
 @observer
@@ -119,16 +118,16 @@ class Task extends React.Component {
         this.store.startData = event.target.value;
     }
 
-    onChangeStartTime(value) {
-        this.store.startTime = value;
+    onChangeStartTime(event) {
+        this.store.startTime = event.target.value;
     }
 
     onChangeEndData(event) {
         this.store.endData = event.target.value;
     }
 
-    onChangeEndTime(value) {
-        this.store.endTime = value;
+    onChangeEndTime(event) {
+        this.store.endTime = event.target.value;
     }
 
     onChangeDescription(event) {
@@ -164,12 +163,12 @@ class Task extends React.Component {
             <div className={"add-form"}>
                 <input type={"date"} className={"add-form-item"} value={this.store.startData}
                        onChange={this.onChangeStartData}/>
-                <TimeInput className={"add-form-item"} initTime={this.store.startTime}
-                           onTimeChange={this.onChangeStartTime}/>
+                <input value={this.store.startTime} type={"time"} className={"add-form-item"}
+                           onChange={this.onChangeStartTime}/>
                 <input type={"date"} value={this.store.endData} className={"add-form-item"}
                        onChange={this.onChangeEndData}/>
-                <TimeInput initTime={this.store.endTime} className={"add-form-item"}
-                           onTimeChange={this.onChangeEndTime}/>
+                <input type={"time"} value={this.store.endTime} className={"add-form-item"}
+                           onChange={this.onChangeEndTime}/>
                 <textarea className={"add-form-item"} value={this.store.description}
                           onChange={this.onChangeDescription}/>
                 <button onClick={this.addTrack}>{text}</button>

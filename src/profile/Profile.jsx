@@ -148,12 +148,6 @@ class Profile extends Component {
                             onChange={this.changeEmail}
                             value={this.store.email}
                         />
-                        <input
-                            className={"form-control"}
-                            type={"text"}
-                            id={"user-role"}
-                            defaultValue={this.store.role}
-                        />
                         <Button onClick={this.saveDataProfile} text={"Save"}/>
                         {
                             this.store.validateErr !== "" &&
@@ -162,7 +156,7 @@ class Profile extends Component {
                         <h4>My Tasks</h4>
                         <div className={"tasks"}>
                             {this.store.tracks.map((task, index) => {
-                                if (task.status)
+                                if (task.status) {
                                     return (
                                         <div key={index} className={"card card__"+task.status.split(" ")[0]}>
                                             <Link to={`project/${task.id_project}/${task.id_task}`}>
@@ -173,6 +167,9 @@ class Profile extends Component {
                                             </Link>
                                         </div>
                                     )
+                                } else {
+                                    return void 0;
+                                }
                             })}
                         </div>
                     </div>
